@@ -7,7 +7,6 @@ class Contact
 	public:
 		Contact();
 		~Contact();
-		void sayhi();
 		void set_first_name(std::string name);
 		void set_last_name(std::string name);
 		void set_nick_name(std::string name);

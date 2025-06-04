@@ -3,15 +3,23 @@
 
 int main()
 {
-	Contact contact_1;
-	PhoneBook phone;
+	PhoneBook phoneBook;
 	std::string cmd;
-	
+
 	std::cout << "Use one of these three cmds ADD, SEARCH or EXIT" << std::endl;
-	std::cin >> cmd;
-	if (cmd == "ADD")
+	while (1)
 	{
-		phone.get_contact(contact_1);
+		std::cout << "Enter command: " << std::endl ;
+		std::cin >> cmd;
+		if (cmd == "ADD")
+		{
+			phoneBook.addContact();
+		}
+		else if (cmd == "SEARCH")
+		{
+			phoneBook.searchContacts();
+		}
+		else if (cmd == "EXIT")
+			break ;
 	}
-	//contact_1.sayhi();
 }

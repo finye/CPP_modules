@@ -8,7 +8,13 @@ class PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void get_contact(Contact contact);
+		void addContact();
+		void searchContacts();
+	private:
+		static const int _max_contacts = 8;
+		Contact _contacts[_max_contacts];
+		int 	_count;
+		int		_oldest_contact;
 };
 
 #endif

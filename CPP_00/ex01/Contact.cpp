@@ -1,17 +1,13 @@
 #include "Contact.hpp"
 
-Contact::Contact()
+Contact::Contact(): _first_name(""), _last_name(""), _nick_name(""), _phone_number(0), _darkest_secret("")
 {
-	std::cout << "here in the contact class\n";
+	std::cout << "Contact constructed\n";
 }
 
 Contact::~Contact()
 {
 	std::cout << "Contact destruction\n";
-}
-void Contact::sayhi()
-{
-	std::cout << "Hiiiii\n";
 }
 
 void Contact::set_first_name(std::string name)
@@ -44,7 +40,7 @@ std::string Contact::get_last_name(Contact c)
 }
 std::string Contact::get_nick_name(Contact c)
 {
-	return c._darkest_secret;
+	return c._nick_name;
 }
 int Contact::get_phone_num(Contact c)
 {
