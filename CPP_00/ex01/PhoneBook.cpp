@@ -2,12 +2,12 @@
 
 PhoneBook::PhoneBook(): _count(0), _oldest_contact(0)
 {
-	std::cout<< "phonebook contructed\n";
+	//std::cout<< "phonebook contructed\n";
 }
 
 PhoneBook::~PhoneBook()
 {
-	std::cout<< "phoneBook destruction\n";
+	//std::cout<< "phoneBook destruction\n";
 }
 void PhoneBook::addContact()
 {
@@ -15,7 +15,7 @@ void PhoneBook::addContact()
 	std::string f_name;
 	std::string l_name;
 	std::string n_name;
-	int			phone_num;
+	std::string	phone_num;
 	std::string secret;
 
 	std::cout<< "getting the contact info here\n";
@@ -32,9 +32,9 @@ void PhoneBook::addContact()
 
 	std::cout << "please add your nick name\n";
 	std::cin >> n_name;
-	c.set_nick_name(n_name);
+	c.set_nickname(n_name);
 	std::cout << "printing here from the get function-----";
-	std::cout << c.get_nick_name(c);
+	std::cout << c.get_nickname(c);
 
 	std::cout << "please add your phone number\n";
 	std::cin >> phone_num;
@@ -63,10 +63,14 @@ void PhoneBook::searchContacts()
 {
 	int i = 0;
 	std::cout << "printing the contacts" << std::endl;
+	std::cout << std::setw(10) << std::right << "Index" << "|"
+			  << std::setw(10) << std::right << "First Name" << "|"
+			  << std::setw(10) << std::right << "Last Name" << "|"
+			  << std::setw(10) << std::right << "Nickname" << std::endl;
 	while (i < _count)
 	{
-		std::cout << _contacts[i].get_first_name(_contacts[i]) << std::endl;
-		std::cout << _contacts[i].get_last_name(_contacts[i]) << std::endl;
+		std::cout << std::setw(10) << std::right << _contacts[i].get_first_name(_contacts[i]) << "|";
+		std::cout << std::setw(10) << _contacts[i].get_last_name(_contacts[i]) << std::endl;
 		i++;
 	}
 }

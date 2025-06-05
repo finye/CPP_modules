@@ -1,13 +1,13 @@
 #include "Contact.hpp"
 
-Contact::Contact(): _first_name(""), _last_name(""), _nick_name(""), _phone_number(0), _darkest_secret("")
+Contact::Contact(): _first_name(""), _last_name(""), _nickname(""), _phone_number(""), _darkest_secret("")
 {
-	std::cout << "Contact constructed\n";
+	//std::cout << "Contact constructed\n";
 }
 
 Contact::~Contact()
 {
-	std::cout << "Contact destruction\n";
+	//std::cout << "Contact destruction\n";
 }
 
 void Contact::set_first_name(std::string name)
@@ -18,11 +18,11 @@ void Contact::set_last_name(std::string name)
 {
 	this->_last_name = name;
 }
-void Contact::set_nick_name(std::string name)
+void Contact::set_nickname(std::string name)
 {
-	this->_nick_name = name;
+	this->_nickname = name;
 }
-void Contact::set_phone_num(int num)
+void Contact::set_phone_num(std::string num)
 {
 	this->_phone_number = num;
 }
@@ -38,11 +38,11 @@ std::string Contact::get_last_name(Contact c)
 {
 	return c._last_name;
 }
-std::string Contact::get_nick_name(Contact c)
+std::string Contact::get_nickname(Contact c)
 {
-	return c._nick_name;
+	return c._nickname;
 }
-int Contact::get_phone_num(Contact c)
+std::string Contact::get_phone_num(Contact c)
 {
 	return c._phone_number;
 }
