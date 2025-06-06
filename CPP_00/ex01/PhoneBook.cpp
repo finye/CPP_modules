@@ -20,25 +20,30 @@ void PhoneBook::addContact()
 
 	std::cout<< "getting the contact info here\n";
 	std::cout << "Add first name: ";
-	std::cin >> f_name;
+	std::getline(std::cin, f_name);
 	c.set_first_name(f_name);
 
 	std::cout << "Add last name: ";
-	std::cin >> l_name;
+	std::getline(std::cin, l_name);
 	c.set_last_name(l_name);
 
 	std::cout << "Add nick name: ";
-	std::cin >> n_name;
+	std::getline(std::cin, n_name);
 	c.set_nickname(n_name);
 
 	std::cout << "Add phone number: ";
-	std::cin >> phone_num;
+	std::getline(std::cin, phone_num);
 	c.set_phone_num(phone_num);
 
 	std::cout << "Add darkest secret: ";
-	std::cin >> secret;
+	std::getline(std::cin, secret);
 	c.set_secret(secret);
 
+	if (f_name.empty() || l_name.empty() || n_name.empty() || phone_num.empty() || secret.empty())
+	{
+		std::cout << "Empty field is not allowed!" << std::endl;
+		return;
+	}
 	if (_count < _max_contacts)
 	{
 		_contacts[_count] = c;
@@ -72,7 +77,10 @@ void PhoneBook::searchContacts()
 	std::cin >> search_i;
 	int index = std::stoi(search_i);
 	if (index >= 0 && index < _count)
+	{
 		std::cout << "good stuff!\n";
+		_contacts[index].view_contact();
+	}
 	else
-		std::cout << "invalid contact index\n";
+		std::cout << "Index is invalid\n";
 }

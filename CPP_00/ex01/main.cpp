@@ -9,8 +9,9 @@ int main()
 	std::cout << "Use one of these three cmds ADD, SEARCH or EXIT" << std::endl;
 	while (1)
 	{
-		std::cout << "Enter command: " << std::endl ;
-		std::cin >> cmd;
+		std::cout << "Enter command: ";
+		//std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
 		{
 			phoneBook.addContact();

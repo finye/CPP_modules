@@ -50,3 +50,11 @@ std::string Contact::get_secret(Contact c)
 {
 	return c._darkest_secret;
 }
+void Contact::view_contact()
+{
+	std::cout << "Firstname: " << _first_name << std::endl;
+	std::cout << "Lastname: " << _last_name << std::endl;
+	std::cout << "Nickname: " << _nickname << std::endl;
+	std::cout << "Phone number: " << _phone_number << std::endl;
+	std::cout << "Darkest secret: " << _darkest_secret << std::endl;
+}

@@ -17,6 +17,7 @@ class Contact
 		std::string get_nickname(Contact c);
 		std::string get_phone_num(Contact c);
 		std::string get_secret(Contact c);
+		void view_contact();
 	private:
 		std::string	_first_name;
 		std::string _last_name;
