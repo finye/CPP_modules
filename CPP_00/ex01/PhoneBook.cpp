@@ -32,10 +32,13 @@ void PhoneBook::addContact()
 }
 void PhoneBook::searchContacts()
 {
-	//add a check if count is zero
+	if (!_count)
+	{
+		std::cout << "Phonebook is empty!" << std::endl;
+		return ;
+	}
 	int i = 0;
 	std::string search_i;
-	std::cout << "printing the contacts" << std::endl;
 	std::cout << std::setw(10) << "Index" << "|"
 			  << std::setw(10) << "First name" << "|"
 			  << std::setw(10) << "Last name" << "|"

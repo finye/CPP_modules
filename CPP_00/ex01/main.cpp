@@ -5,12 +5,11 @@ int main()
 {
 	PhoneBook phoneBook;
 	std::string cmd;
-
-	//std::cout << "Use one of these three cmds ADD, SEARCH or EXIT" << std::endl;
 	while (1)
 	{
 		std::cout << "Enter one of these commands (ADD - SEARCH - EXIT): ";
-		std::getline(std::cin, cmd);
+		if (!std::getline(std::cin, cmd))
+			break ;
 		if (cmd == "ADD")
 		{
 			phoneBook.addContact();
