@@ -12,38 +12,13 @@ PhoneBook::~PhoneBook()
 void PhoneBook::addContact()
 {
 	Contact c;
-	std::string f_name;
-	std::string l_name;
-	std::string n_name;
-	std::string	phone_num;
-	std::string secret;
 
-	std::cout<< "getting the contact info here\n";
-	std::cout << "Add first name: ";
-	std::getline(std::cin, f_name);
-	c.set_first_name(f_name);
+	c.set_first_name(get_contact("First name: "));
+	c.set_last_name(get_contact("Last name: "));
+	c.set_nickname(get_contact("Nickname: "));
+	c.set_phone_num(get_contact("Phone number: "));
+	c.set_secret(get_contact("Darkest secret: "));
 
-	std::cout << "Add last name: ";
-	std::getline(std::cin, l_name);
-	c.set_last_name(l_name);
-
-	std::cout << "Add nick name: ";
-	std::getline(std::cin, n_name);
-	c.set_nickname(n_name);
-
-	std::cout << "Add phone number: ";
-	std::getline(std::cin, phone_num);
-	c.set_phone_num(phone_num);
-
-	std::cout << "Add darkest secret: ";
-	std::getline(std::cin, secret);
-	c.set_secret(secret);
-
-	if (f_name.empty() || l_name.empty() || n_name.empty() || phone_num.empty() || secret.empty())
-	{
-		std::cout << "Empty field is not allowed!" << std::endl;
-		return;
-	}
 	if (_count < _max_contacts)
 	{
 		_contacts[_count] = c;
@@ -61,20 +36,20 @@ void PhoneBook::searchContacts()
 	int i = 0;
 	std::string search_i;
 	std::cout << "printing the contacts" << std::endl;
-	std::cout << std::setw(10) << std::right << "Index" << "|"
-			  << std::setw(10) << std::right << "First name" << "|"
-			  << std::setw(10) << std::right << "Last name" << "|"
-			  << std::setw(10) << std::right << "Nickname" << std::endl;
+	std::cout << std::setw(10) << "Index" << "|"
+			  << std::setw(10) << "First name" << "|"
+			  << std::setw(10) << "Last name" << "|"
+			  << std::setw(10) << "Nickname" << std::endl;
 	while (i < _count)
 	{
-		std::cout << std::setw(10) << std::right << i << "|";
-		std::cout << std::setw(10) << std::right << _contacts[i].get_first_name(_contacts[i]) << "|";
-		std::cout << std::setw(10) << std::right << _contacts[i].get_last_name(_contacts[i]) << "|";
-		std::cout << std::setw(10) << std::right << _contacts[i].get_nickname(_contacts[i]) << std::endl;
+		std::cout << std::setw(10) << i << "|";
+		std::cout << std::setw(10) << _contacts[i].get_first_name() << "|";
+		std::cout << std::setw(10) << _contacts[i].get_last_name() << "|";
+		std::cout << std::setw(10) << _contacts[i].get_nickname() << std::endl;
 		i++;
 	}
-	std::cout << "Enter index(1 - 8)for contact detail: ";
-	std::cin >> search_i;
+	std::cout << "Enter index (1 - 8) for contact details: ";
+	std::getline(std::cin, search_i);
 	int index = std::stoi(search_i);
 	if (index >= 0 && index < _count)
 	{
@@ -82,5 +57,18 @@ void PhoneBook::searchContacts()
 		_contacts[index].view_contact();
 	}
 	else
-		std::cout << "Index is invalid\n";
+		std::cout << "Error: index is invalid.\n";
+}
+
+std::string PhoneBook::get_contact(std::string prompt)
+{
+	std::string input;
+	while (input.empty())
+	{
+		std::cout << prompt ;
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "Error: field can't be empty.\n";
+	}
+	return input;
 }

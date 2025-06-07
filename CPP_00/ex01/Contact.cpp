@@ -30,25 +30,25 @@ void Contact::set_secret(std::string secret)
 {
 	this->_darkest_secret = secret;
 }
-std::string Contact::get_first_name(Contact c)
+std::string Contact::get_first_name() const
 {
-	return c._first_name;
+	return _first_name;
 }
-std::string Contact::get_last_name(Contact c)
+std::string Contact::get_last_name() const
 {
-	return c._last_name;
+	return _last_name;
 }
-std::string Contact::get_nickname(Contact c)
+std::string Contact::get_nickname() const
 {
-	return c._nickname;
+	return _nickname;
 }
-std::string Contact::get_phone_num(Contact c)
+std::string Contact::get_phone_num() const
 {
-	return c._phone_number;
+	return _phone_number;
 }
-std::string Contact::get_secret(Contact c)
+std::string Contact::get_secret() const
 {
-	return c._darkest_secret;
+	return _darkest_secret;
 }
 void Contact::view_contact()
 {

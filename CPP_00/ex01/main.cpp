@@ -6,11 +6,10 @@ int main()
 	PhoneBook phoneBook;
 	std::string cmd;
 
-	std::cout << "Use one of these three cmds ADD, SEARCH or EXIT" << std::endl;
+	//std::cout << "Use one of these three cmds ADD, SEARCH or EXIT" << std::endl;
 	while (1)
 	{
-		std::cout << "Enter command: ";
-		//std::cin >> cmd;
+		std::cout << "Enter one of these commands (ADD - SEARCH - EXIT): ";
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
 		{
@@ -22,5 +21,9 @@ int main()
 		}
 		else if (cmd == "EXIT")
 			break ;
+		else
+		{
+			std::cout << "Error: invalid Command." << std::endl;
+		}
 	}
 }

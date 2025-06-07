@@ -16,6 +16,7 @@ class PhoneBook
 		Contact _contacts[_max_contacts];
 		int 	_count;
 		int		_oldest_contact;
+		std::string get_contact(std::string prompt);
 };
 
 #endif
