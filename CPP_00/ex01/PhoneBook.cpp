@@ -22,13 +22,13 @@ void PhoneBook::add_contact()
 		_contacts[_oldest_contact] = c;
 		_oldest_contact = (_oldest_contact + 1) % _max_contacts;
 	}
-	std::cout << "New contact added." << std::endl;
+	std::cout << GREEN << "New contact added." << RESET << std::endl;
 }
 void PhoneBook::search_contacts()
 {
 	if (!_count)
 	{
-		std::cout << "Phonebook is empty." << std::endl;
+		std::cout << RED << "Phonebook is empty." << RESET << std::endl;
 		return ;
 	}
 	int i = 0;
@@ -48,12 +48,12 @@ void PhoneBook::search_contacts()
 	std::cout << "Enter index for contact details, MAX_INDEX["<< _count <<"]: ";
 	if (!std::getline(std::cin, search_i))
 	{
-		std::cout << "\nExiting phonebook.\n";
+		std::cout << CYAN << "Exiting phonebook.\n" << RESET;
 		std::exit(0);
 	}
 	if (!is_valid_search(search_i))
 	{
-		std::cout << "Error: invalid index." << std::endl;
+		std::cout << RED << "Error: invalid index." << RESET << std::endl;
 		return ;
 	}
 	int index = std::stoi(search_i);
@@ -62,7 +62,7 @@ void PhoneBook::search_contacts()
 		_contacts[index - 1].view_contact();
 	}
 	else
-		std::cout << "Error: invalid index." << std::endl;
+		std::cout << RED << "Error: invalid index." << RESET << std::endl;
 }
 
 std::string PhoneBook::get_contact(std::string prompt)
@@ -73,11 +73,11 @@ std::string PhoneBook::get_contact(std::string prompt)
 		std::cout << prompt ;
 		if (!std::getline(std::cin, input))
 		{
-			std::cout << "\nExiting phonebook.\n";
+			std::cout << CYAN << "\nExiting phonebook.\n" << RESET;
 			std::exit(0);
 		}
 		if (input.empty())
-			std::cout << "Error: field can't be empty." << std::endl;
+			std::cout  << RED << "Error: field can't be empty." << RESET << std::endl;
 	}
 	return input;
 }

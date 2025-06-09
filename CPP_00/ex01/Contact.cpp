@@ -34,14 +34,6 @@ std::string Contact::get_nickname() const
 {
 	return _nickname;
 }
-std::string Contact::get_phone_num() const
-{
-	return _phone_number;
-}
-std::string Contact::get_secret() const
-{
-	return _darkest_secret;
-}
 void Contact::view_contact()
 {
 	std::cout << "Firstname: " << _first_name << std::endl;

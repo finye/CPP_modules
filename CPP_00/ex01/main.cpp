@@ -9,7 +9,7 @@ int main()
 		std::cout << "Enter command [ADD, SEARCH or EXIT]: ";
 		if (!std::getline(std::cin, cmd))
 		{
-			std::cout << "\nExiting phonebook.\n";
+			std::cout << CYAN << "Exiting phonebook.\n" << RESET;
 			break;
 		}
 		if (cmd == "ADD")
@@ -18,12 +18,12 @@ int main()
 			phone_book.search_contacts();
 		else if (cmd == "EXIT")
 		{
-			std::cout << "Exiting phonebook.\n";
+			std::cout << CYAN << "Exiting phonebook.\n" << RESET;
 			break;
 		}
 		else
 		{
-			std::cout << "Invalid Command, please try again." << std::endl;
+			std::cout << RED << "Invalid command, please try again." << RESET << std::endl;
 		}
 	}
 	return 0;
