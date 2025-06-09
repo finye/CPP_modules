@@ -23,6 +23,7 @@ class PhoneBook
 		int				_oldest_contact;
 		std::string		get_contact(std::string prompt);
 		bool			is_valid_search(std::string index);
+		std::string		check_length(std::string const field) const;
 };
 
 #endif
