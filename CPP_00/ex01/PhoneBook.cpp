@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:15:28 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/09 14:15:29 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/09 17:53:23 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PhoneBook::PhoneBook(): _count(0), _oldest_contact(0){}
 
-std::string PhoneBook::get_contact(std::string prompt)
+std::string PhoneBook::_get_contact(std::string prompt)
 {
 	std::string input;
 	while (input.empty())
@@ -35,11 +35,11 @@ void PhoneBook::add_contact()
 {
 	Contact c;
 
-	c.set_first_name(get_contact("First name: "));
-	c.set_last_name(get_contact("Last name: "));
-	c.set_nickname(get_contact("Nickname: "));
-	c.set_phone_num(get_contact("Phone number: "));
-	c.set_secret(get_contact("Darkest secret: "));
+	c.set_first_name(_get_contact("First name: "));
+	c.set_last_name(_get_contact("Last name: "));
+	c.set_nickname(_get_contact("Nickname: "));
+	c.set_phone_num(_get_contact("Phone number: "));
+	c.set_secret(_get_contact("Darkest secret: "));
 
 	if (_count < _max_contacts)
 	{
@@ -54,7 +54,7 @@ void PhoneBook::add_contact()
 	std::cout << GREEN << "New contact added." << RESET << std::endl;
 }
 
-bool PhoneBook::is_valid_search(std::string index)
+bool PhoneBook::_is_valid_search(std::string index)
 {
 	bool is_valid = true;
 
@@ -79,7 +79,7 @@ bool PhoneBook::is_valid_search(std::string index)
 	return is_valid;
 }
 
-std::string	PhoneBook::check_length(std::string const contact_info) const
+std::string	PhoneBook::_check_length(std::string const contact_info) const
 {
 	if (contact_info.length() > 10)
 		return (contact_info.substr(0, 9) + ".");
@@ -102,9 +102,9 @@ void PhoneBook::search_contacts()
 	while (i < _count)
 	{
 		std::cout << std::setw(10) << i + 1 << "|";
-		std::cout << std::setw(10) << check_length(_contacts[i].get_first_name()) << "|";
-		std::cout << std::setw(10) << check_length(_contacts[i].get_last_name()) << "|";
-		std::cout << std::setw(10) << check_length(_contacts[i].get_nickname()) << std::endl;
+		std::cout << std::setw(10) << _check_length(_contacts[i].get_first_name()) << "|";
+		std::cout << std::setw(10) << _check_length(_contacts[i].get_last_name()) << "|";
+		std::cout << std::setw(10) << _check_length(_contacts[i].get_nickname()) << std::endl;
 		i++;
 	}
 	std::cout << "Enter index for contact details, MAX_INDEX["<< _count <<"]: ";
@@ -113,7 +113,7 @@ void PhoneBook::search_contacts()
 		std::cout << CYAN << "Exiting phonebook.\n" << RESET;
 		std::exit(0);
 	}
-	if (!is_valid_search(search_i))
+	if (!_is_valid_search(search_i))
 	{
 		std::cout << RED << "Error: invalid index." << RESET << std::endl;
 		return ;

@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:15:38 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/09 14:15:39 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/09 17:53:27 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ class PhoneBook
 		Contact 		_contacts[_max_contacts];
 		int 			_count;
 		int				_oldest_contact;
-		std::string		get_contact(std::string prompt);
-		bool			is_valid_search(std::string index);
-		std::string		check_length(std::string const field) const;
+		std::string		_get_contact(std::string prompt);
+		bool			_is_valid_search(std::string index);
+		std::string		_check_length(std::string const field) const;
 };
 
 #endif
