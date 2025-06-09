@@ -1,5 +1,4 @@
-#include "Contact.hpp"
-#include "PhoneBook.hpp" //should i include this both ??
+#include "PhoneBook.hpp"
 
 int main()
 {
@@ -7,22 +6,25 @@ int main()
 	std::string cmd;
 	while (1)
 	{
-		std::cout << "Enter one of these commands (ADD - SEARCH - EXIT): ";
+		std::cout << "Enter command [ADD, SEARCH or EXIT]: ";
 		if (!std::getline(std::cin, cmd))
-			break ;
+		{
+			std::cout << "\nExiting phonebook.\n";
+			break;
+		}
 		if (cmd == "ADD")
-		{
 			phoneBook.addContact();
-		}
 		else if (cmd == "SEARCH")
-		{
 			phoneBook.searchContacts();
-		}
 		else if (cmd == "EXIT")
-			break ;
+		{
+			std::cout << "Exiting phonebook.\n";
+			break;
+		}
 		else
 		{
-			std::cout << "Error: invalid Command." << std::endl;
+			std::cout << "Invalid Command, please try again." << std::endl;
 		}
 	}
+	return 0;
 }

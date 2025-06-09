@@ -29,12 +29,13 @@ void PhoneBook::addContact()
 		_contacts[_oldest_contact] = c;
 		_oldest_contact = (_oldest_contact + 1) % _max_contacts;
 	}
+	std::cout << "New contact added." << std::endl;
 }
 void PhoneBook::searchContacts()
 {
 	if (!_count)
 	{
-		std::cout << "Phonebook is empty!" << std::endl;
+		std::cout << "Phonebook is empty." << std::endl;
 		return ;
 	}
 	int i = 0;
@@ -45,22 +46,30 @@ void PhoneBook::searchContacts()
 			  << std::setw(10) << "Nickname" << std::endl;
 	while (i < _count)
 	{
-		std::cout << std::setw(10) << i << "|";
+		std::cout << std::setw(10) << i + 1 << "|";
 		std::cout << std::setw(10) << _contacts[i].get_first_name() << "|";
 		std::cout << std::setw(10) << _contacts[i].get_last_name() << "|";
 		std::cout << std::setw(10) << _contacts[i].get_nickname() << std::endl;
 		i++;
 	}
-	std::cout << "Enter index (1 - 8) for contact details: ";
-	std::getline(std::cin, search_i);
-	int index = std::stoi(search_i);
-	if (index >= 0 && index < _count)
+	std::cout << "Enter index for contact details, MAX_INDEX["<< _count <<"]: ";
+	if (!std::getline(std::cin, search_i))
 	{
-		std::cout << "good stuff!\n";
-		_contacts[index].view_contact();
+		std::cout << "\nExiting phonebook.\n";
+		std::exit(1);
+	}
+	if (!is_valid_search(search_i))
+	{
+		std::cout << "Error: invalid index." << std::endl;
+		return ;
+	}
+	int index = std::stoi(search_i);
+	if (index >= 1 && index <= _count)
+	{
+		_contacts[index - 1].view_contact();
 	}
 	else
-		std::cout << "Error: index is invalid.\n";
+		std::cout << "Error: invalid index." << std::endl;
 }
 
 std::string PhoneBook::get_contact(std::string prompt)
@@ -69,9 +78,38 @@ std::string PhoneBook::get_contact(std::string prompt)
 	while (input.empty())
 	{
 		std::cout << prompt ;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "\nExiting phonebook.\n";
+			std::exit(1);
+		}
 		if (input.empty())
-			std::cout << "Error: field can't be empty.\n";
+			std::cout << "Error: field can't be empty." << std::endl;
 	}
 	return input;
+}
+
+bool PhoneBook::is_valid_search(std::string index)
+{
+	bool is_valid = true;
+
+	if (index.empty())
+		is_valid = false;
+	else
+	{
+		if (index.length() > 9)
+			is_valid = false;
+		else
+		{
+			for (size_t i = 0; i < index.length(); i++)
+			{
+				if (!std::isdigit(index[i]))
+				{
+					is_valid = false;
+					break ;
+				}
+			}
+		}
+	}
+	return is_valid;
 }
