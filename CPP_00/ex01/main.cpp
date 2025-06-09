@@ -2,7 +2,7 @@
 
 int main()
 {
-	PhoneBook phoneBook;
+	PhoneBook phone_book;
 	std::string cmd;
 	while (1)
 	{
@@ -13,9 +13,9 @@ int main()
 			break;
 		}
 		if (cmd == "ADD")
-			phoneBook.addContact();
+			phone_book.add_contact();
 		else if (cmd == "SEARCH")
-			phoneBook.searchContacts();
+			phone_book.search_contacts();
 		else if (cmd == "EXIT")
 		{
 			std::cout << "Exiting phonebook.\n";

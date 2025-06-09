@@ -9,9 +9,8 @@ class PhoneBook
 {
 	public:
 		PhoneBook();
-		~PhoneBook();
-		void addContact();
-		void searchContacts();
+		void add_contact();
+		void search_contacts();
 	private:
 		static const int _max_contacts = 8;
 		Contact _contacts[_max_contacts];

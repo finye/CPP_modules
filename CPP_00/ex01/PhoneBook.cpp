@@ -1,15 +1,8 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(): _count(0), _oldest_contact(0)
-{
-	//std::cout<< "phonebook contructed\n";
-}
+PhoneBook::PhoneBook(): _count(0), _oldest_contact(0){}
 
-PhoneBook::~PhoneBook()
-{
-	//std::cout<< "phoneBook destruction\n";
-}
-void PhoneBook::addContact()
+void PhoneBook::add_contact()
 {
 	Contact c;
 
@@ -31,7 +24,7 @@ void PhoneBook::addContact()
 	}
 	std::cout << "New contact added." << std::endl;
 }
-void PhoneBook::searchContacts()
+void PhoneBook::search_contacts()
 {
 	if (!_count)
 	{
@@ -56,7 +49,7 @@ void PhoneBook::searchContacts()
 	if (!std::getline(std::cin, search_i))
 	{
 		std::cout << "\nExiting phonebook.\n";
-		std::exit(1);
+		std::exit(0);
 	}
 	if (!is_valid_search(search_i))
 	{
@@ -81,7 +74,7 @@ std::string PhoneBook::get_contact(std::string prompt)
 		if (!std::getline(std::cin, input))
 		{
 			std::cout << "\nExiting phonebook.\n";
-			std::exit(1);
+			std::exit(0);
 		}
 		if (input.empty())
 			std::cout << "Error: field can't be empty." << std::endl;

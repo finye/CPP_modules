@@ -1,14 +1,6 @@
 #include "Contact.hpp"
 
-Contact::Contact(): _first_name(""), _last_name(""), _nickname(""), _phone_number(""), _darkest_secret("")
-{
-	//std::cout << "Contact constructed\n";
-}
-
-Contact::~Contact()
-{
-	//std::cout << "Contact destruction\n";
-}
+Contact::Contact(): _first_name(""), _last_name(""), _nickname(""), _phone_number(""), _darkest_secret(""){}
 
 void Contact::set_first_name(std::string name)
 {
