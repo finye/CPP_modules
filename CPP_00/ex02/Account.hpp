@@ -21,7 +21,7 @@ class Account {
 
 public:
 
-	typedef Account		A;
+	typedef Account		t;
 
 	static int	getNbAccounts( void );
 	static int	getTotalAmount( void );
