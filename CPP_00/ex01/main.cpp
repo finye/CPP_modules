@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:15:22 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/09 14:15:23 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/10 15:49:58 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	PhoneBook phone_book;
 	std::string cmd;
-	while (1)
+	while (!std::cin.eof())
 	{
 		std::cout << "Enter command [ADD, SEARCH or EXIT]: ";
 		if (!std::getline(std::cin, cmd))

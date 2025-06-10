@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:15:28 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/09 17:53:23 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/10 15:51:37 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ PhoneBook::PhoneBook(): _count(0), _oldest_contact(0){}
 std::string PhoneBook::_get_contact(std::string prompt)
 {
 	std::string input;
-	while (input.empty())
+	while (input.empty() && !std::cin.eof())
 	{
 		std::cout << prompt ;
 		if (!std::getline(std::cin, input))
 		{
 			std::cout << CYAN << "\nExiting phonebook.\n" << RESET;
-			std::exit(0);
+			return "";
 		}
 		if (input.empty())
 			std::cout  << RED << "Error: field can't be empty." << RESET << std::endl;
@@ -108,10 +108,11 @@ void PhoneBook::search_contacts()
 		i++;
 	}
 	std::cout << "Enter index for contact details, MAX_INDEX["<< _count <<"]: ";
-	if (!std::getline(std::cin, search_i))
+	std::getline(std::cin, search_i);
+	if (std::cin.eof())
 	{
 		std::cout << CYAN << "Exiting phonebook.\n" << RESET;
-		std::exit(0);
+		return ;
 	}
 	if (!_is_valid_search(search_i))
 	{
