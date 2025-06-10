@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:15:28 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/10 15:51:37 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:02:23 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PhoneBook::PhoneBook(): _count(0), _oldest_contact(0){}
 std::string PhoneBook::_get_contact(std::string prompt)
 {
 	std::string input;
-	while (input.empty() && !std::cin.eof())
+	while (input.empty())
 	{
 		std::cout << prompt ;
 		if (!std::getline(std::cin, input))
@@ -34,13 +34,33 @@ std::string PhoneBook::_get_contact(std::string prompt)
 void PhoneBook::add_contact()
 {
 	Contact c;
+	std::string f_name, l_name, n_name, phone_num, secret;
 
-	c.set_first_name(_get_contact("First name: "));
-	c.set_last_name(_get_contact("Last name: "));
-	c.set_nickname(_get_contact("Nickname: "));
-	c.set_phone_num(_get_contact("Phone number: "));
-	c.set_secret(_get_contact("Darkest secret: "));
+	f_name = _get_contact("First name: ");
+	if (f_name.empty())
+		return;
+	c.set_first_name(f_name);
 
+	l_name = _get_contact("Last name: ");
+	if (l_name.empty())
+		return;
+	c.set_last_name(l_name);
+
+	n_name = _get_contact("Nickname: ");
+	if (n_name.empty())
+		return;
+	c.set_nickname(n_name);
+
+	phone_num = _get_contact("Phone number: ");
+	if (phone_num.empty())
+		return;
+	c.set_phone_num(phone_num);
+
+	secret = _get_contact("Darkest secret: ");
+	if (secret.empty())
+		return;
+	c.set_secret(secret);
+	
 	if (_count < _max_contacts)
 	{
 		_contacts[_count] = c;
