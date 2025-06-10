@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 18:32:45 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/10 10:16:40 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/10 22:39:21 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 class Zombie
 {
 	public:
-		~Zombie();
 		Zombie(std::string name);
+		~Zombie();
 		void announce (void);
 	private:
 		std::string _name;

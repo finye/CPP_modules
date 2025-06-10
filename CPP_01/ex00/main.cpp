@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 18:32:55 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/10 10:15:00 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/10 22:40:02 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 int main()
 {
-	//heap
-	Zombie* new_zombie = newZombie("Heeermi");
-	new_zombie->announce();
+	//heap allocated zombie
+	Zombie* zombie;
 
-	delete new_zombie;
-	//stack
+	zombie = newZombie("Heeermi");
+	zombie->announce();
+
+	//need to manually delete heap-allocated memory
+	delete zombie;
+
+	//stack allocated zombie
+	//automatically destroyed when function ends
 	randomChump("Yenunu");
 }
