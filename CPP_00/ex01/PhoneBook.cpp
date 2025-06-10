@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:15:28 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/10 18:02:23 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/10 23:04:54 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ std::string PhoneBook::_get_contact(std::string prompt)
 	std::string input;
 	while (input.empty())
 	{
-		std::cout << prompt ;
+		std::cout << prompt << std::endl;
 		if (!std::getline(std::cin, input))
 		{
 			std::cout << CYAN << "\nExiting phonebook.\n" << RESET;
@@ -60,7 +60,7 @@ void PhoneBook::add_contact()
 	if (secret.empty())
 		return;
 	c.set_secret(secret);
-	
+
 	if (_count < _max_contacts)
 	{
 		_contacts[_count] = c;
@@ -127,7 +127,7 @@ void PhoneBook::search_contacts()
 		std::cout << std::setw(10) << _check_length(_contacts[i].get_nickname()) << std::endl;
 		i++;
 	}
-	std::cout << "Enter index for contact details, MAX_INDEX["<< _count <<"]: ";
+	std::cout << "Enter index for contact details, MAX_INDEX["<< _count <<"]: " << std::endl;
 	std::getline(std::cin, search_i);
 	if (std::cin.eof())
 	{
