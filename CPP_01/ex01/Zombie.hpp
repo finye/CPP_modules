@@ -6,12 +6,12 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 23:30:14 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/11 00:44:38 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/12 17:30:58 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 

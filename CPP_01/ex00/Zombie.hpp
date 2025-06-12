@@ -6,12 +6,12 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 18:32:45 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/10 22:39:21 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/12 17:30:45 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 #include <iostream>
 
 class Zombie

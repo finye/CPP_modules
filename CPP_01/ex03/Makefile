@@ -3,7 +3,7 @@ NAME = violence
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 
-SOURCES = main.cpp
+SOURCES = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)
