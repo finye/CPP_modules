@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 18:53:54 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/15 17:46:20 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:17:07 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ std::string &replaceContent(std::string &content, const std::string &toBeReplace
 
 	while ((pos = content.find(toBeReplaced, pos)) != std::string::npos)
 	{
-		std::cout << "searched STR found at pos " << pos << std::endl;
-		// here we should replace the stuff!
 		content.erase(pos, toBeReplaced.length());
 		content.insert(pos, newStr);
 		pos = pos + newStr.length();
 	}
-	std::cout << "AFTER Replacing " << content << std::endl;
 	return content;
 }
 int main(int argc, char **argv)

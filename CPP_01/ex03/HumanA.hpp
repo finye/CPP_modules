@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:29:47 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/12 18:23:32 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:16:16 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Weapon.hpp"
+
 class HumanA
 {
 	public:
