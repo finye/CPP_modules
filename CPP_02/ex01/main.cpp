@@ -6,12 +6,11 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 15:04:26 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/24 11:06:49 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:29:54 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <limits.h>
 
 int main(void)
 {

@@ -6,13 +6,16 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 15:04:29 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/23 16:19:04 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:30:14 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
+
 #include <iostream>
+#include <limits.h>
+#include <cmath>
 
 class Fixed
 {
