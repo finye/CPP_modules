@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 15:04:29 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/24 17:30:14 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:06:20 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	int toInt(void) const;
 
 private:
-	int _numberValue;
+	int _fixedValue;
 	static const int _fractionalBits = 8;
 };
 

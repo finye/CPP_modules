@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:15:57 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/25 17:04:55 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:09:04 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,23 @@ public:
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
+
+	// Overload functions for the 6 comparison operators: >, <, >=, <=, == and !=
 	bool operator>(Fixed const &rhs) const;
 	bool operator<(Fixed const &rhs) const;
 	bool operator>=(Fixed const &rhs) const;
 	bool operator<=(Fixed const &rhs) const;
 	bool operator==(Fixed const &rhs) const;
 	bool operator!=(Fixed const &rhs) const;
+
+	// Overload function for the 4 arithmetic operators: +,-, *, and /
+	Fixed operator+(Fixed const &rhs) const;
+	Fixed operator-(Fixed const &rhs) const;
+	Fixed operator*(Fixed const &rhs) const;
+	Fixed operator/(Fixed const &rhs) const;
+
 private:
-	int _numberValue;
+	int _fixedValue;
 	static const int _fractionalBits = 8;
 };
 

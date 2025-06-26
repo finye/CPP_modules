@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:45:28 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/23 13:44:33 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:06:20 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	void setRawBits(int const raw);
 
 private:
-	int _numberValue;
+	int _fixedValue;
 	static const int _fractionalBits = 8;
 };
 #endif
