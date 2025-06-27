@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:16:06 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/26 16:57:36 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/27 15:49:00 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,11 @@ int main()
 
 	Fixed const z(Fixed(5.05f) / Fixed(2));
 	std::cout << "z is :" << z << std::endl;
+
+	Fixed f;
+	std::cout << f << std::endl;
+	std::cout << ++f << std::endl;
+	std::cout << f << std::endl;
+	std::cout << f++ << std::endl;
+	std::cout << f << std::endl;
 }

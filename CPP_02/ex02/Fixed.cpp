@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:16:01 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/26 23:21:00 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/27 16:07:51 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,34 @@ Fixed Fixed::operator/(Fixed const &rhs) const
 	int64_t temp = static_cast<int64_t>(this->_fixedValue) << _fractionalBits;
 	result._fixedValue = static_cast<int>(temp / rhs._fixedValue);
 	return result;
+}
+
+// prefix increment
+Fixed& Fixed::operator++()
+{
+	++_fixedValue;
+	return *this;
+}
+
+// postfix increment
+Fixed	Fixed::operator++(int)
+{
+	Fixed temp = *this;
+	++_fixedValue;
+	return temp;
+}
+
+//prefix decrement
+Fixed& Fixed::operator--()
+{
+	--_fixedValue;
+	return *this;
+}
+
+//postfix decrement
+Fixed Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	--_fixedValue;
+	return temp;
 }

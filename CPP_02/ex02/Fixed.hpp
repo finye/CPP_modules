@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:15:57 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/26 17:09:04 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/27 16:09:29 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ public:
 	Fixed operator-(Fixed const &rhs) const;
 	Fixed operator*(Fixed const &rhs) const;
 	Fixed operator/(Fixed const &rhs) const;
+
+	// Overload functios for pre and post increment/decrement operators
+	Fixed& operator++();
+	Fixed operator++(int);
+	Fixed& operator--();
+	Fixed operator--(int);
 
 private:
 	int _fixedValue;
