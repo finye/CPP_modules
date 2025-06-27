@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:16:01 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/27 16:07:51 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/27 17:38:10 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,4 +163,24 @@ Fixed Fixed::operator--(int)
 	Fixed temp = *this;
 	--_fixedValue;
 	return temp;
+}
+
+Fixed &Fixed::min(Fixed &fixed1, Fixed &fixed2)
+{
+	return (fixed2 < fixed1) ? fixed2 : fixed1;
+}
+
+const Fixed &Fixed::min(Fixed const &fixed1, Fixed const &fixed2)
+{
+	return (fixed2 < fixed1) ? fixed2 : fixed1 ;
+}
+
+ Fixed &Fixed::max(Fixed &fixed1, Fixed &fixed2)
+{
+	return (fixed2 > fixed1) ? fixed2 : fixed1;
+}
+
+const Fixed &Fixed::max(Fixed const &fixed1, Fixed const &fixed2)
+{
+	return (fixed2 > fixed1) ? fixed2 : fixed1;
 }

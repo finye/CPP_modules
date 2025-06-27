@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:15:57 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/27 16:09:29 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/27 17:17:55 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ public:
 	Fixed operator++(int);
 	Fixed& operator--();
 	Fixed operator--(int);
+
+	static Fixed& min(Fixed &fixed1, Fixed &fixed2);
+	const static Fixed & min(Fixed const &fixed1, Fixed const &fixed2);
+	static Fixed& max(Fixed &fixed1, Fixed &fixed2);
+	const static Fixed & max(Fixed const &fixed1, Fixed const &fixed2);
 
 private:
 	int _fixedValue;

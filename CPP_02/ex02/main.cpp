@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:16:06 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/06/27 15:49:00 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/06/27 17:29:53 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,9 @@ int main()
 	std::cout << f << std::endl;
 	std::cout << f++ << std::endl;
 	std::cout << f << std::endl;
+
+	Fixed g(10);
+	Fixed h(11);
+
+	std::cout << Fixed::min(g, h) << std::endl;
 }
