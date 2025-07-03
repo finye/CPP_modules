@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:00:16 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/03 10:38:50 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/03 21:54:38 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ void ClapTrap::attack(const std::string &target)
 {
 	if (_energyPoints == 0)
 	{
-		std::cout << "ClapTrap " << _name << " has NO energy points to attack with" << std::endl;
+		std::cout << "Attack [KO], ClapTrap " << _name << " has no energy points" << std::endl;
 		return;
 	}
 	if (_hitPoints == 0)
 	{
-		std::cout << "ClapTrap " << _name << " has NO hit points to attack with" << std::endl;
+		std::cout << "Attack [KO], ClapTrap " << _name << " has no hit points" << std::endl;
 		return;
 	}
 	std::cout << "ClapTrap " << _name
@@ -83,7 +83,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_energyPoints == 0)
 	{
-		std::cout << "ClapTrap " << _name << " has NO energy points to get a Repair" << std::endl;
+		std::cout << "Repair [KO], ClapTrap " << _name << " has no energy points" << std::endl;
+		return;
+	}
+	if (_hitPoints == 0)
+	{
+		std::cout << "Repair [KO], ClapTrap " << _name << " has no hit points" << std::endl;
 		return;
 	}
 	std::cout << "ClapTrap " << _name << " hit points before repair : " << _hitPoints << std::endl;
