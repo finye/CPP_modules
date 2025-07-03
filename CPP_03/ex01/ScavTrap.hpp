@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:41:55 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/03 11:48:38 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:15:16 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,13 @@
 
 class ScavTrap : public ClapTrap
 {
+	
 public:
 	ScavTrap(void);
+	ScavTrap(std::string name);
 	~ScavTrap(void);
+	ScavTrap(ScavTrap const &src);
+	void guardGate();
 };
 
 #endif

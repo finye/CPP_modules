@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:00:16 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/03 11:50:04 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:50:41 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ ClapTrap::ClapTrap(void) : _name("default"), _hitPoints(10), _energyPoints(10), 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap Constructor called with Name: " << _name << std::endl;
+}
+ClapTrap::ClapTrap(std::string name, unsigned int hitPts, unsigned int energyPts, unsigned int attackDmgs): _name(name),
+_hitPoints(hitPts), _energyPoints(energyPts), _attackDamage(attackDmgs) 
+{
+	std::cout << "ClapTrap Constructor called with params for Name: " << _name << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
@@ -91,4 +96,19 @@ void ClapTrap::beRepaired(unsigned int amount)
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " got a repair service of amount : " << amount << std::endl;
 	std::cout << "ClapTrap " << _name << " hit points after repair : " << _hitPoints << std::endl;
+}
+
+unsigned int ClapTrap::getHitPoints() const
+{
+	return _hitPoints;
+}
+
+unsigned int ClapTrap::getEnergyPoints() const
+{
+	return _energyPoints;
+}
+
+unsigned int ClapTrap::getAttackDamage() const
+{
+	return _attackDamage;
 }
