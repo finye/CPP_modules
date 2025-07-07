@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 10:41:55 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 14:54:36 by fsolomon         ###   ########.fr       */
+/*   Created: 2025/07/04 11:23:54 by fsolomon          #+#    #+#             */
+/*   Updated: 2025/07/04 14:25:16 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-#include "ClapTrap.hpp"
-#include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
+private:
+	std::string _name;
 
 public:
-	ScavTrap(void); // canonial
-	ScavTrap(std::string name);
-	~ScavTrap(void);						  // canonical
-	ScavTrap(ScavTrap const &src);			  // canonical
-	ScavTrap &operator=(ScavTrap const &rhs); // canonical
-	void guardGate();
+	DiamondTrap(void); // canonical
+	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap const &src);			// canonical
+	DiamondTrap &operator=(DiamondTrap const &rhs); // canonical
+	~DiamondTrap(void);								// canonical
+	void whoAmI();
 };
-
 #endif

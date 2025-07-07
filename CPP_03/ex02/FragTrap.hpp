@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 10:41:55 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 14:54:36 by fsolomon         ###   ########.fr       */
+/*   Created: 2025/07/04 09:45:57 by fsolomon          #+#    #+#             */
+/*   Updated: 2025/07/04 10:24:21 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
-class ScavTrap : virtual public ClapTrap
+class FragTrap : public ClapTrap
 {
-
 public:
-	ScavTrap(void); // canonial
-	ScavTrap(std::string name);
-	~ScavTrap(void);						  // canonical
-	ScavTrap(ScavTrap const &src);			  // canonical
-	ScavTrap &operator=(ScavTrap const &rhs); // canonical
-	void guardGate();
+	FragTrap(void); // canonical
+	FragTrap(std::string name);
+	FragTrap(FragTrap const &src);		// canonical
+	FragTrap &operator=(FragTrap &rhs); // canonical
+	~FragTrap(void);					// canonical
+	void highFivesGuys(void);
 };
-
 #endif

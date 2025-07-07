@@ -1,10 +1,9 @@
-NAME = diamondTrap
+NAME = fragTrap
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 
-HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
-SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)
@@ -12,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(CC) $(FLAGS) -o $(NAME) $(OBJECTS)
 
-%.o: %.cpp  $(HEADERS)
+%.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

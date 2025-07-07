@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:41:55 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 14:54:36 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/03 23:36:47 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-class ScavTrap : virtual public ClapTrap
+class ScavTrap : public ClapTrap
 {
 
 public:
