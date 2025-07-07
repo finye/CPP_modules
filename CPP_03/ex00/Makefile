@@ -3,6 +3,7 @@ NAME = clapTrap
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 
+HEADERS = ClapTrap.hpp
 SOURCES = main.cpp ClapTrap.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
@@ -11,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(CC) $(FLAGS) -o $(NAME) $(OBJECTS)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
