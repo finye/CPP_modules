@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:00:14 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/03 23:40:03 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/07 11:30:22 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ public:
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	std::string getName() const;
 	unsigned int getHitPoints() const;
 	unsigned int getEnergyPoints() const;
 	unsigned int getAttackDamage() const;

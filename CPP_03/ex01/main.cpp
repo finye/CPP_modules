@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:00:19 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 00:34:03 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/07 12:11:32 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int main()
 	ScavTrap lily("lily");
 	std::cout << std::endl;
 
-	ScavTrap bee(lily);
+	ScavTrap bee("bee");
 	std::cout << std::endl;
 
 	bee.attack("lily");
-	bee.takeDamage(20);
+	lily.takeDamage(20);
 	bee.guardGate();
 	std::cout << std::endl;
 
@@ -41,4 +41,5 @@ int main()
 	std::cout << "newBee's hitpoints: " << newBee.getHitPoints() << std::endl;
 	std::cout << "newBee's attackDamage: " << newBee.getAttackDamage() << std::endl;
 	std::cout << "newBee's energyPoints: " << newBee.getEnergyPoints() << std::endl;
+	std::cout << std::endl;
 }

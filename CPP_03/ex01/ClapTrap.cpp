@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:00:16 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 09:40:18 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/07 11:30:16 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,11 +106,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " got a repair service of amount : " << amount << std::endl;
 	std::cout << "ClapTrap " << _name << " hit points after repair : " << _hitPoints << std::endl;
-}
-
-std::string ClapTrap::getName() const
-{
-	return _name;
 }
 
 unsigned int ClapTrap::getHitPoints() const

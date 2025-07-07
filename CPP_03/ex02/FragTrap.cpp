@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 09:45:55 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 15:31:52 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/07 12:20:11 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ FragTrap::~FragTrap(void)
 }
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << _name << ": Abeg, give me a Hi Five!!" << std::endl;
+	std::cout << "FragTrap " << _name << ": Abeg, give me a Hi Five!!" << std::endl;
 }

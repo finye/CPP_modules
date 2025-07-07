@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:41:58 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 14:53:56 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/07 12:52:06 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,24 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
 		this->ClapTrap::operator=(rhs);
 	}
 	return *this;
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+	if (_energyPoints == 0)
+	{
+		std::cout << "Attack [KO], ScavTrap " << _name << " has no energy points" << std::endl;
+		return;
+	}
+	if (_hitPoints == 0)
+	{
+		std::cout << "Attack [KO], ScavTrap " << _name << " has no hit points" << std::endl;
+		return;
+	}
+	std::cout << "ScavTrap " << _name
+			  << " attacks " << target << ", causing "
+			  << _attackDamage << " points of damage! pew pew" << std::endl;
+	_energyPoints--;
 }
 
 void ScavTrap::guardGate()

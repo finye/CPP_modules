@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:00:19 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 13:07:37 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/07 12:58:00 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	std::cout << std::endl;
 	diamond.whoAmI();
 	diamond.attack("dimi");
-	diamond.takeDamage(50);
+	diamond.takeDamage(30);
 	diamond.beRepaired(25);
 	diamond.highFivesGuys();
 	diamond.guardGate();
@@ -33,5 +33,6 @@ int main()
 
 	diamond2.whoAmI();
 	std::cout << "diamond2 hit points: " << diamond2.getHitPoints() << std::endl;
+	std::cout << "diamond2 energy points: " << diamond2.getEnergyPoints() << std::endl;
 	std::cout << std::endl;
 }

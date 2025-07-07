@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:41:55 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/04 14:54:36 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/07 12:52:24 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 	~ScavTrap(void);						  // canonical
 	ScavTrap(ScavTrap const &src);			  // canonical
 	ScavTrap &operator=(ScavTrap const &rhs); // canonical
+	void attack(const std::string &target);
 	void guardGate();
 };
 

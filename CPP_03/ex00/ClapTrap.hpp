@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:00:14 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/02 14:37:16 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/07 11:22:17 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 class ClapTrap
 {
 public:
-	ClapTrap(void);
+	ClapTrap(void);								// canonical
 	ClapTrap(std::string name);
-	~ClapTrap(void);
-	ClapTrap(ClapTrap const &src);
-	ClapTrap &operator=(ClapTrap const &rhs);
+	~ClapTrap(void);							// canonical
+	ClapTrap(ClapTrap const &src);				// canonical
+	ClapTrap &operator=(ClapTrap const &rhs);   // canonical
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
