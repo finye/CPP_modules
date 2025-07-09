@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 15:27:26 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 16:25:31 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 00:54:45 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Brain::Brain(void)
 {
 	std::cout << "Brain default constructor called" << std::endl;
 	for (int i = 0; i < 100; i++)
-		_ideas[i] = "idea: " + i;
+		_ideas[i] = "idea: " + std::to_string(i + 1);
 }
 
 Brain::Brain(Brain const &src)

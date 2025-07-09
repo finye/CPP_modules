@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:18:25 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 15:15:22 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 00:56:17 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,37 @@
 
 int main()
 {
-	const Animal *meta = new Animal();
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-
-	i->makeSound(); // will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-
-	std::cout << std::endl;
-	delete meta;
-	delete j;
+	delete j; // should not create a leak
 	delete i;
-	std::cout << std::endl;
-
-	std::cout << "\n_____Wrong Animal test_____\n"
+	std::cout << "\n____array of animals_____\n"
 			  << std::endl;
 
-	const WrongAnimal *metaWrong = new WrongAnimal();
-	const WrongAnimal *iWrong = new WrongCat();
+	Animal *animals[10];
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
 
-	std::cout << iWrong->getType() << " " << std::endl;
+	std::cout << "\n____array of animals hanging out together_____\n"
+			  << std::endl;
 
-	iWrong->makeSound(); // will not output the cat sound!
-	metaWrong->makeSound();
+	for (int i = 0; i < 10; i++)
+	{
+		animals[i]->makeSound();
+	}
 
-	std::cout << std::endl;
-	delete metaWrong;
-	delete iWrong;
-	std::cout << std::endl;
+	std::cout << "\n____array of animals deleted_____\n"
+			  << std::endl;
 
-	WrongCat wrongCat;
-	wrongCat.makeSound();
-	std::cout << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		delete animals[i];
+	}
 	return 0;
 }
