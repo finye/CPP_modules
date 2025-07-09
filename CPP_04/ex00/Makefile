@@ -3,8 +3,8 @@ NAME = animals
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 
-HEADERS = Animal.hpp Cat.hpp Dog.hpp
-SOURCES = main.cpp Animal.cpp Cat.cpp Dog.cpp
+HEADERS = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
+SOURCES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)

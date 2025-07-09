@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:41:10 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 11:58:21 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/09 13:33:12 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ Cat::~Cat(void)
 
 void Cat::makeSound() const
 {
-	std::cout << "meow meeoow meeeooow" << std::endl;
+	std::cout << "Cat: meow meeoow meeeooow" << std::endl;
 }
