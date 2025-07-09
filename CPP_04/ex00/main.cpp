@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:18:25 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 13:34:17 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:15:22 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,46 +18,41 @@
 
 int main()
 {
-	{
-		const Animal *meta = new Animal();
-		const Animal *j = new Dog();
-		const Animal *i = new Cat();
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
 
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
 
-		i->makeSound(); // will output the cat sound!
-		j->makeSound();
-		meta->makeSound();
+	i->makeSound(); // will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 
-		std::cout << std::endl;
-		delete meta;
-		delete j;
-		delete i;
-		std::cout << std::endl;
+	std::cout << std::endl;
+	delete meta;
+	delete j;
+	delete i;
+	std::cout << std::endl;
 
-		Cat cat;
-		cat.makeSound();
+	std::cout << "\n_____Wrong Animal test_____\n"
+			  << std::endl;
 
-		std::cout << "\n_____Wrong Animal test_____\n"
-				  << std::endl;
+	const WrongAnimal *metaWrong = new WrongAnimal();
+	const WrongAnimal *iWrong = new WrongCat();
 
-		const WrongAnimal *metaWrong = new WrongAnimal();
-		const WrongAnimal *iWrong = new WrongCat();
+	std::cout << iWrong->getType() << " " << std::endl;
 
-		std::cout << iWrong->getType() << " " << std::endl;
+	iWrong->makeSound(); // will not output the cat sound!
+	metaWrong->makeSound();
 
-		iWrong->makeSound(); // will not output the cat sound!
-		metaWrong->makeSound();
+	std::cout << std::endl;
+	delete metaWrong;
+	delete iWrong;
+	std::cout << std::endl;
 
-		std::cout << std::endl;
-		delete metaWrong;
-		delete iWrong;
-		std::cout << std::endl;
-
-		WrongCat wrongCat;
-		wrongCat.makeSound();
-		std::cout << std::endl;
-	}
+	WrongCat wrongCat;
+	wrongCat.makeSound();
+	std::cout << std::endl;
 	return 0;
 }
