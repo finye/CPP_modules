@@ -6,12 +6,17 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:18:25 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/08 18:39:10 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/09 11:09:24 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
+	Animal ant;
+	Dog dog;
+	Cat cat;
 }

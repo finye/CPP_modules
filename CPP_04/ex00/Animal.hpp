@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:18:16 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/08 18:23:01 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/09 10:07:37 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 class Animal
 {
 protected:
-	std::string type;
+	std::string _type;
 
 public:
 	Animal(void);
-	Animal(Animal &const src);
+	Animal(std::string const type);
+	Animal(Animal const &src);
 	Animal &operator=(Animal const &rhs);
 	~Animal(void);
 };
