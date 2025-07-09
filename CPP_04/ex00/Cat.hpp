@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:41:04 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/08 18:50:35 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/09 11:57:53 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ public:
 	Cat(Cat const &src);
 	Cat &operator=(Cat const &rhs);
 	~Cat(void);
+
+	virtual void makeSound() const;
 };
 #endif

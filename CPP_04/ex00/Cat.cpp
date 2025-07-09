@@ -6,13 +6,13 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:41:10 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 11:09:11 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/09 11:58:21 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("cat")
+Cat::Cat(void) : Animal("Cat")
 {
 	std::cout << "Cat default constructor called" << std::endl;
 }
@@ -32,4 +32,9 @@ Cat &Cat::operator=(Cat const &rhs)
 Cat::~Cat(void)
 {
 	std::cout << "Cat destructor called" << std::endl;
+}
+
+void Cat::makeSound() const
+{
+	std::cout << "meow meeoow meeeooow" << std::endl;
 }

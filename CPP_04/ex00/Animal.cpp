@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:18:18 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 11:09:15 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/09 12:09:49 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Animal::Animal(void) : _type("unkown")
 }
 Animal::Animal(std::string const type) : _type(type)
 {
-	std::cout << "Animal constructor called with type parameter" << std::endl;
+	std::cout << "Animal constructor called with type: " << type << std::endl;
 }
 Animal::Animal(Animal const &src) : _type(src._type)
 {
@@ -36,4 +36,14 @@ Animal &Animal::operator=(Animal const &rhs)
 Animal::~Animal(void)
 {
 	std::cout << "Animal destructor called for " << _type << std::endl;
+}
+
+void Animal::makeSound() const
+{
+	std::cout << "default animal sound awuuuuuuuuuuuuuu" << std::endl;
+}
+
+std::string Animal::getType() const
+{
+	return _type;
 }
