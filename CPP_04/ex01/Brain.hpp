@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 15:27:23 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 16:16:34 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 10:25:52 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ public:
 	Brain(Brain const &src);
 	Brain &operator=(Brain const &rhs);
 	~Brain(void);
+
+	std::string getIdea(int i) const;
+	void putIdea(int i, std::string const &newIdea);
 };
 #endif

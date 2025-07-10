@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:41:07 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 16:43:17 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 11:13:35 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,9 @@ Dog::~Dog(void)
 void Dog::makeSound() const
 {
 	std::cout << "Dog: woof wooof woooof" << std::endl;
+}
+
+Brain *Dog::getBrain() const
+{
+	return _brain;
 }

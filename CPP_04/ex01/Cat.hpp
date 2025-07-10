@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:41:04 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 16:11:58 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 10:33:50 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ public:
 	~Cat(void);
 
 	virtual void makeSound() const;
+	Brain *getBrain() const;
 };
 #endif

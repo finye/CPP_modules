@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 15:27:26 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/10 00:54:45 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 11:21:18 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,20 @@ Brain &Brain::operator=(Brain const &rhs)
 Brain::~Brain(void)
 {
 	std::cout << "Brain destructor called" << std::endl;
+}
+
+// idea 1 is at index 0
+std::string Brain::getIdea(int i) const
+{
+	if (i < 0 || i >= 100)
+		return "Error: no idea";
+	return _ideas[i];
+}
+
+void Brain::putIdea(int i, std::string const &newIdea)
+{
+	if (i >= 0 && i < 100)
+	{
+		_ideas[i] = newIdea;
+	}
 }
