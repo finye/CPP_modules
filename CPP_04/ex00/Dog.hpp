@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:41:12 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/09 11:57:58 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:30:43 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ public:
 	Dog &operator=(Dog const &rhs);
 	~Dog(void);
 
-	virtual void makeSound() const;
+	void makeSound() const override;
 };
 #endif
