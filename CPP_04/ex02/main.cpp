@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:18:25 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/10 11:22:34 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 11:38:30 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 int main()
 {
+	// Animal newAnimal; not possible to instantiate an abstract class
+
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
 
