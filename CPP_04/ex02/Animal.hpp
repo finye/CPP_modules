@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:18:16 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/07/10 11:33:36 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:17:19 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	// virtual destructor ensures the correct destructor chain is called
 	virtual ~Animal(void);
 
-	virtual void makeSound() const = 0;
+	virtual void makeSound() const = 0; // Pure Virtual Function
 	std::string getType() const;
 };
 #endif
