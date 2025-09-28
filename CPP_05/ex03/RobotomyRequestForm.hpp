@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/27 20:48:22 by fsolomon          #+#    #+#             */
+/*   Updated: 2025/09/27 20:48:24 by fsolomon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+#include <iostream>
+#include <fstream>
+#include "AForm.hpp"
+
+class RobotomyRequestForm : public AForm
+{
+public:
+	RobotomyRequestForm();
+	~RobotomyRequestForm();
+	RobotomyRequestForm(const std::string &target);
+	RobotomyRequestForm(const RobotomyRequestForm &src);
+	RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
+	void executeForm() const;
+};
