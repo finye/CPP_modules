@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:57 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/27 12:52:15 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/09/28 15:15:33 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ AForm::AForm(void) : _name("default"), _isSigned(false), _signingGrade(150), _ex
 }
 AForm::AForm(std::string name, int gradeToSign, int gradeToexec, std::string target) : _name(name), _isSigned(false), _signingGrade(gradeToSign), _executingGrade(gradeToexec), _target(target)
 {
-	if (gradeToSign <= 1 || gradeToexec <= 1)
+	if (gradeToSign < 1 || gradeToexec < 1)
 		throw GradeTooHighException();
-	if (gradeToSign >= 150 || gradeToexec >= 150)
+	if (gradeToSign > 150 || gradeToexec > 150)
 		throw GradeTooLowException();
 }
 
@@ -77,11 +77,11 @@ void AForm::beSigned(Bureaucrat b)
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
-	return "Form grade is too high"; // TODO : remove the form part later ??
+	return "Grade is too high";
 }
 const char *AForm::GradeTooLowException::what() const throw()
 {
-	return "Grade is too low to sign the form";
+	return "Grade is too low";
 }
 const char *AForm::FormNotSignedException::what() const throw()
 {
