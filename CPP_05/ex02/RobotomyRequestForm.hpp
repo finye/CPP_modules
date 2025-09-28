@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/27 20:47:30 by fsolomon          #+#    #+#             */
+/*   Updated: 2025/09/27 20:47:31 by fsolomon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 #include <iostream>
 #include <fstream>
@@ -5,9 +17,6 @@
 
 class RobotomyRequestForm : public AForm
 {
-private:
-	std::string _target;
-
 public:
 	RobotomyRequestForm();
 	~RobotomyRequestForm();

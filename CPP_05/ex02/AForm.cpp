@@ -6,16 +6,16 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:57 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/24 23:54:56 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/09/27 12:52:15 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(void) : _name("default"), _isSigned(false), _signingGrade(150), _executingGrade(150)
+AForm::AForm(void) : _name("default"), _isSigned(false), _signingGrade(150), _executingGrade(150), _target("default")
 {
 }
-AForm::AForm(std::string name, int gradeToSign, int gradeToexec) : _name(name), _isSigned(false), _signingGrade(gradeToSign), _executingGrade(gradeToexec)
+AForm::AForm(std::string name, int gradeToSign, int gradeToexec, std::string target) : _name(name), _isSigned(false), _signingGrade(gradeToSign), _executingGrade(gradeToexec), _target(target)
 {
 	if (gradeToSign <= 1 || gradeToexec <= 1)
 		throw GradeTooHighException();
@@ -46,6 +46,10 @@ AForm &AForm::operator=(AForm const &rhs)
 const std::string &AForm::getName() const
 {
 	return _name;
+}
+const std::string &AForm::getTarget() const
+{
+	return _target;
 }
 
 bool AForm::getIsSigned() const

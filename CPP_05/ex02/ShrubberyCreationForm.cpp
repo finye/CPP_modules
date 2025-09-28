@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/27 20:47:26 by fsolomon          #+#    #+#             */
+/*   Updated: 2025/09/28 14:48:20 by fsolomon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubberyForm", 145, 137), _target("default")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubberyForm", 145, 137, "default")
 {
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery", 145, 137, target)
 {
 }
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm(src), _target(src._target)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm(src)
 {
 }
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
@@ -18,7 +30,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	if (&rhs != this)
 	{
 		AForm::operator=(rhs);
-		_target = rhs._target;
 	}
 	return (*this);
 }
@@ -26,9 +37,16 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void ShrubberyCreationForm::executeForm() const
 {
 	std::string tree =
-		"$$$$$"
-		"$$$$$$$";
-	std::string fileName = _target + "shruberry";
+		"       _-_\n"
+		"    /~~   ~~\\\n"
+		" /~~         ~~\\\n"
+		"{               }\n"
+		" \\  _-     -_  /\n"
+		"   ~  \\\\ //  ~\n"
+		"       | |     \n"
+		"       | |     \n"
+		"   \\/ // \\\\ \\/\n";
+	std::string fileName = this->getTarget() + "_shrubbery";
 	std::ofstream file(fileName.c_str());
 	if (file.is_open())
 	{

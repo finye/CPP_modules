@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:59 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/24 23:40:43 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/09/27 20:43:25 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,17 @@ private:
 	bool _isSigned;
 	const int _signingGrade;
 	const int _executingGrade;
+	const std::string _target;
 
 public:
 	AForm(void);
-	~AForm(void);
-	AForm(std::string name, int gradeToSign, int gradeToexec);
+	virtual ~AForm(void);
+	AForm(std::string name, int gradeToSign, int gradeToexec, std::string target);
 	AForm(AForm const &src);
 	AForm &operator=(AForm const &rhs);
 
 	const std::string &getName() const;
+	const std::string &getTarget() const;
 	bool getIsSigned() const;
 	int getSignGrade() const;
 	int getExecGrade() const;
