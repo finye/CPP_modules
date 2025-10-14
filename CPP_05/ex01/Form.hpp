@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:59 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/16 23:47:21 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/05 17:04:55 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ class Bureaucrat;
 class Form
 {
 private:
-	const std::string _name;
-	bool _isSigned;
-	const int _signGrade;
-	const int _execGrade;
+	const std::string	_name;
+	bool				_isSigned;
+	const int			_signingGrade;
+	const int			_executingGrade;
 
 public:
 	Form(void);
@@ -30,21 +30,21 @@ public:
 	Form(Form const &src);
 	Form &operator=(Form const &rhs);
 
-	const std::string &getName() const;
-	bool getIsSigned() const;
-	int getSignGrade() const;
-	int getExecGrade() const;
-	void beSigned(Bureaucrat b);
+	const std::string&	getName() const;
+	bool				getIsSigned() const;
+	int					getSigningGrade() const;
+	int					getExecGrade() const;
+	void				beSigned(Bureaucrat b);
 
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw() override;
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw() override;
 	};
 };
 

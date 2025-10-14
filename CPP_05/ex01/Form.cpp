@@ -6,16 +6,16 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:57 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/28 15:14:10 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:30:56 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void) : _name("default"), _isSigned(false), _signGrade(150), _execGrade(150)
+Form::Form(void) : _name("defaultForm"), _isSigned(false), _signingGrade(150), _executingGrade(150)
 {
 }
-Form::Form(std::string name, int gradeToSign, int gradeToexec) : _name(name), _isSigned(false), _signGrade(gradeToSign), _execGrade(gradeToexec)
+Form::Form(std::string name, int gradeToSign, int gradeToexec) : _name(name), _isSigned(false), _signingGrade(gradeToSign), _executingGrade(gradeToexec)
 {
 	if (gradeToSign < 1 || gradeToexec < 1)
 		throw GradeTooHighException();
@@ -29,8 +29,8 @@ Form::~Form(void)
 
 Form::Form(Form const &src) : _name(src._name),
 							  _isSigned(src._isSigned),
-							  _signGrade(src._signGrade),
-							  _execGrade(src._execGrade)
+							  _signingGrade(src._signingGrade),
+							  _executingGrade(src._executingGrade)
 {
 }
 
@@ -53,19 +53,19 @@ bool Form::getIsSigned() const
 	return _isSigned;
 }
 
-int Form::getSignGrade() const
+int Form::getSigningGrade() const
 {
-	return _signGrade;
+	return _signingGrade;
 }
 
 int Form::getExecGrade() const
 {
-	return _execGrade;
+	return _executingGrade;
 }
 
 void Form::beSigned(Bureaucrat b)
 {
-	if (b.getGrade() <= _signGrade)
+	if (b.getGrade() <= _signingGrade)
 		_isSigned = true;
 	else
 		throw GradeTooLowException();
@@ -83,8 +83,9 @@ const char *Form::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &o, Form const &src)
 {
-	o << "Form name: " << src.getName() << ", status: " << src.getIsSigned()
-	  << ", signGrade: " << src.getSignGrade() << ", execGrade: "
-	  << src.getExecGrade() << std::endl;
+	o << "Form name: " << src.getName()
+	  << ", status: " << (src.getIsSigned() ? "signed" : "not signed")
+	  << ", signingGrade: " << src.getSigningGrade()
+	  << ", executingGrade: " << src.getExecGrade() << std::endl;
 	return o;
 }

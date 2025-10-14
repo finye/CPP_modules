@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 16:00:13 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/16 23:47:25 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 12:36:20 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Form;
 class Bureaucrat
 {
 private:
-	std::string const _name;
+	const std::string _name;
 	int _grade;
 
 public:
@@ -30,8 +30,8 @@ public:
 	Bureaucrat(Bureaucrat const &src);
 	Bureaucrat &operator=(Bureaucrat const &rhs);
 
+	const std::string &getName() const;
 	int getGrade() const;
-	std::string getName() const;
 
 	void incrementGrade();
 	void decrementGrade();
@@ -40,12 +40,12 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw() override;
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw() override;
 	};
 };
 

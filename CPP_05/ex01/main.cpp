@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 16:00:15 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/26 10:18:44 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 12:32:35 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
 	try
 	{
 		Form highGrade("highGrade", -42, 10);
@@ -31,15 +30,27 @@ int main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	try
+	{
+		Bureaucrat a("a", 100);
+		Bureaucrat b("b", 50);
 
-	Bureaucrat a("a", 100);
-	Bureaucrat b("b", 50);
-	Form c("c", 75, 75);
+		Form c("c", 75, 75);
+		Form defaultForm;
 
-	a.signForm(c);
-	b.signForm(c);
+		std::cout << c;
+		std::cout << defaultForm;
 
-	std::cout << c;
+		a.signForm(c);
+		b.signForm(c);
+		std::cout << c;
 
+		defaultForm = c;
+		std::cout << defaultForm;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << e.what() << '\n';
+	}
 	return 0;
 }
