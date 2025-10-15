@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:48:25 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/10/15 12:38:13 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:31:54 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void ShrubberyCreationForm::executeForm() const
 		"   \\/ // \\\\ \\/\n";
 
 	std::string fileName = this->getTarget() + "_shrubbery";
-	std::ofstream file(fileName.c_str());
+	std::ofstream file(fileName);
 	if (file.is_open())
 	{
 		file << tree;
