@@ -6,13 +6,13 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:47:37 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/27 20:47:39 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:35:26 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("presidentialForm", 25, 5, "default")
+PresidentialPardonForm::PresidentialPardonForm() : AForm("presidentialForm", 25, 5, "defaultTarget")
 {
 }
 PresidentialPardonForm::~PresidentialPardonForm()

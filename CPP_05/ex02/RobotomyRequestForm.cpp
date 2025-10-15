@@ -6,13 +6,13 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:47:32 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/27 20:47:33 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/15 09:46:13 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("robotomyForm", 72, 45, "default")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("robotomyForm", 72, 45, "defaultTarget")
 {
 }
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -34,10 +34,9 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 }
 void RobotomyRequestForm::executeForm() const
 {
-	srand(time(NULL));
 	std::cout << "--- drilling noises ---" << std::endl;
 
-	if (rand() % 2 == 0)
+	if (std::rand() % 2 == 0)
 	{
 		std::cout << this->getTarget() << " has been robotomized successfully!" << std::endl;
 	}

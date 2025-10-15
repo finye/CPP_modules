@@ -6,13 +6,13 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:57 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/28 15:15:33 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 20:50:04 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(void) : _name("default"), _isSigned(false), _signingGrade(150), _executingGrade(150), _target("default")
+AForm::AForm(void) : _name("defaultForm"), _isSigned(false), _signingGrade(150), _executingGrade(150), _target("defaultTarget")
 {
 }
 AForm::AForm(std::string name, int gradeToSign, int gradeToexec, std::string target) : _name(name), _isSigned(false), _signingGrade(gradeToSign), _executingGrade(gradeToexec), _target(target)
@@ -57,7 +57,7 @@ bool AForm::getIsSigned() const
 	return _isSigned;
 }
 
-int AForm::getSignGrade() const
+int AForm::getSigningGrade() const
 {
 	return _signingGrade;
 }
@@ -67,7 +67,7 @@ int AForm::getExecGrade() const
 	return _executingGrade;
 }
 
-void AForm::beSigned(Bureaucrat b)
+void AForm::beSigned(const Bureaucrat& b)
 {
 	if (b.getGrade() <= _signingGrade)
 		_isSigned = true;
@@ -89,13 +89,14 @@ const char *AForm::FormNotSignedException::what() const throw()
 }
 std::ostream &operator<<(std::ostream &o, AForm const &src)
 {
-	o << "Form name: " << src.getName() << ", status: " << src.getIsSigned()
-	  << ", signGrade: " << src.getSignGrade() << ", execGrade: "
-	  << src.getExecGrade() << std::endl;
+	o << "Form name: " << src.getName()
+	  << ", status: " << (src.getIsSigned() ? "signed" : "not signed")
+	  << ", signingGrade: " << src.getSigningGrade()
+	  << ", executingGrade: " << src.getExecGrade() << std::endl;
 	return o;
 }
 
-void AForm::execCheck(Bureaucrat const &executor) const
+void AForm::execute(Bureaucrat const &executor) const
 {
 	if (!_isSigned)
 		throw FormNotSignedException();

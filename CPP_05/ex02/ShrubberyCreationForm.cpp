@@ -6,16 +6,15 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:47:26 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/28 14:48:20 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 20:29:23 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubberyForm", 145, 137, "default")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubberyForm", 145, 137, "defaultTarget")
 {
 }
-
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
@@ -33,7 +32,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	}
 	return (*this);
 }
-// TODO: better shruberry and remove the file on fclean?
 void ShrubberyCreationForm::executeForm() const
 {
 	std::string tree =
@@ -46,6 +44,7 @@ void ShrubberyCreationForm::executeForm() const
 		"       | |     \n"
 		"       | |     \n"
 		"   \\/ // \\\\ \\/\n";
+
 	std::string fileName = this->getTarget() + "_shrubbery";
 	std::ofstream file(fileName.c_str());
 	if (file.is_open())
