@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:48:25 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/10/15 12:24:29 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/15 12:38:13 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubberyForm", 145, 137, "defaultTarget")
 {
 }
-
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
@@ -33,7 +32,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	}
 	return (*this);
 }
-
 void ShrubberyCreationForm::executeForm() const
 {
 	std::string tree =

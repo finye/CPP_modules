@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:47:20 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/10/15 10:25:49 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:10:29 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,40 +23,47 @@ int main(void)
 		Bureaucrat Supervisor("Supervisor", 42);
 		Bureaucrat Employee("Employee", 150);
 
+		std::cout << Boss << std::endl;
+		std::cout << Supervisor << std::endl;
+		std::cout << Employee << std::endl;
+
 		// sign: 145, exec: 137
-		ShrubberyCreationForm treeForm("tree");
-		Employee.signForm(treeForm);//X
-		Employee.executeForm(treeForm); //X
-		Supervisor.executeForm(treeForm);//X
-		Supervisor.signForm(treeForm);
-		Employee.executeForm(treeForm); //X
-		Supervisor.executeForm(treeForm);
+		ShrubberyCreationForm shrubberyForm("tree");
+		std::cout << shrubberyForm << std::endl;
+		Employee.signForm(shrubberyForm);	   // X
+		Employee.executeForm(shrubberyForm);   // X
+		Supervisor.executeForm(shrubberyForm); // X
+		Supervisor.signForm(shrubberyForm);
+		Employee.executeForm(shrubberyForm); // X
+		Supervisor.executeForm(shrubberyForm);
 		std::cout << std::endl;
 
-		//sign: 72, exec: 45
-		RobotomyRequestForm robotErmi("Ermi");
-		Employee.signForm(robotErmi); //X
-		Supervisor.signForm(robotErmi);
-		Employee.executeForm(robotErmi); //X
-		Supervisor.executeForm(robotErmi);
-		Supervisor.executeForm(robotErmi);
-		Boss.executeForm(robotErmi);
-		Boss.executeForm(robotErmi);
+		// sign: 72, exec: 45
+		RobotomyRequestForm robotForm("Ermi");
+		std::cout << robotForm << std::endl;
+		Employee.signForm(robotForm); // X
+		Supervisor.signForm(robotForm);
+		Employee.executeForm(robotForm); // X
+		Supervisor.executeForm(robotForm);
+		Supervisor.executeForm(robotForm);
+		Boss.executeForm(robotForm);
+		Boss.executeForm(robotForm);
 		std::cout << std::endl;
 
-		//sign: 25, exec: 5
-		PresidentialPardonForm pardonShefafas("Mati");
-		Employee.signForm(pardonShefafas); //X
-		Supervisor.signForm(pardonShefafas); //X
-		Boss.signForm(pardonShefafas);
-		Employee.executeForm(pardonShefafas); //X
-		Supervisor.executeForm(pardonShefafas); //X
-		Boss.executeForm(pardonShefafas);
+		// sign: 25, exec: 5
+		PresidentialPardonForm pardonForm("Mati");
+		std::cout << pardonForm << std::endl;
+		Employee.signForm(pardonForm);	 // X
+		Supervisor.signForm(pardonForm); // X
+		Boss.signForm(pardonForm);
+		Employee.executeForm(pardonForm);	// X
+		Supervisor.executeForm(pardonForm); // X
+		Boss.executeForm(pardonForm);
 		std::cout << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout <<  "Error: " << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 	try
 	{
@@ -66,7 +73,7 @@ int main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout <<  "Error: " << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 	try
 	{

@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:47:26 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/10/14 20:29:23 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/15 12:38:35 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubberyForm", 145, 137
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery", 145, 137, target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("shrubberyForm", 145, 137, target)
 {
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm(src)
