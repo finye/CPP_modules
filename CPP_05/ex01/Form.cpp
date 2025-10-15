@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:57 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/10/14 11:30:56 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 20:49:05 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int Form::getExecGrade() const
 	return _executingGrade;
 }
 
-void Form::beSigned(Bureaucrat b)
+void Form::beSigned(const Bureaucrat& b)
 {
 	if (b.getGrade() <= _signingGrade)
 		_isSigned = true;

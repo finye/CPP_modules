@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:59 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/10/05 17:04:55 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 20:48:59 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	bool				getIsSigned() const;
 	int					getSigningGrade() const;
 	int					getExecGrade() const;
-	void				beSigned(Bureaucrat b);
+	void				beSigned(const Bureaucrat& b);
 
 	class GradeTooHighException : public std::exception
 	{
