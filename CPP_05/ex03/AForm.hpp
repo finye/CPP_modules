@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 21:19:59 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/27 20:43:50 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 20:55:23 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,30 @@ public:
 	AForm(AForm const &src);
 	AForm &operator=(AForm const &rhs);
 
-	const std::string &getName() const;
-	const std::string &getTarget() const;
-	bool getIsSigned() const;
-	int getSignGrade() const;
-	int getExecGrade() const;
-	void beSigned(Bureaucrat b);
+	const std::string&	getName() const;
+	const std::string&	getTarget() const;
+	bool				getIsSigned() const;
+	int					getSigningGrade() const;
+	int					getExecGrade() const;
+	void				beSigned(const Bureaucrat& b);
+	void				execute(Bureaucrat const &executor) const;
+	virtual void		executeForm() const = 0;
 
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw() override;
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw() override;
 	};
 	class FormNotSignedException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw() override;
 	};
-	void execCheck(Bureaucrat const &executor) const;
-	virtual void executeForm() const = 0;
 };
 
 std::ostream &operator<<(std::ostream &o, AForm const &src);

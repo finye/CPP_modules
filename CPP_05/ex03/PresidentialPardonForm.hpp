@@ -6,13 +6,12 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:48:17 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/27 20:48:18 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/14 21:08:13 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <fstream>
 #include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm

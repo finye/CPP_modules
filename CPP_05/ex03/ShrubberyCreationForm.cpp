@@ -6,20 +6,20 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:48:25 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/28 14:49:19 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/15 12:24:29 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubbery creation", 145, 137, "default")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubberyForm", 145, 137, "defaultTarget")
 {
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("shrubbery creation", 145, 137, target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("shrubberyForm", 145, 137, target)
 {
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm(src)
@@ -33,7 +33,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	}
 	return (*this);
 }
-// TODO: better shruberry and remove the file on fclean?
+
 void ShrubberyCreationForm::executeForm() const
 {
 	std::string tree =
@@ -46,6 +46,7 @@ void ShrubberyCreationForm::executeForm() const
 		"       | |     \n"
 		"       | |     \n"
 		"   \\/ // \\\\ \\/\n";
+
 	std::string fileName = this->getTarget() + "_shrubbery";
 	std::ofstream file(fileName.c_str());
 	if (file.is_open())

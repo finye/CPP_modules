@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 15:59:58 by fsolomon          #+#    #+#             */
-/*   Updated: 2025/09/24 23:59:26 by fsolomon         ###   ########.fr       */
+/*   Updated: 2025/10/05 16:57:52 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void Bureaucrat::executeForm(AForm const &form)
 {
 	try
 	{
-		form.execCheck(*this);
+		form.execute(*this);
 		std::cout << _name << " executed " << form.getName() << std::endl;
 	}
 	catch (const std::exception &e)
