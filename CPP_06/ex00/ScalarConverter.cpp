@@ -20,6 +20,8 @@ void	ScalarConverter::convert(const std::string &input)
 	else if (isFloat(input))
 	{
 		std::cout << "isFloat" << std::endl;
+		float f = std::stof(input);
+		convertFromFloat(f);
 	}
 	else if (isDouble(input))
 	{
@@ -110,9 +112,37 @@ void	ScalarConverter::convertFromInt(int i)
 	printDouble(static_cast<double>(i));
 	std::cout << std::endl;
 }
+
 void	ScalarConverter::convertFromFloat(float f)
 {
-	(void)f;
+	std::cout << "char: ";
+	if (std::isnan(f) || std::isinf(f))
+		std::cout << "impossible";
+	else if (f < 0 || f > 127 || f != static_cast<int>(f))
+		std::cout << "impossible";
+	else if (!std::isprint(static_cast<unsigned char>(static_cast<int>(f))))
+		std::cout << "Non displayable";
+	else
+		std::cout << "'" << static_cast<char>(f) << "'";
+	std::cout << std::endl;
+
+	std::cout << "int: ";
+	if (std::isnan(f) || std::isinf(f))
+		std::cout << "impossible";
+	else if(f < std::numeric_limits<int>::min() || f > std::numeric_limits<int>::max())
+		std::cout << "impossible";
+	else
+		std::cout << static_cast<int>(f);
+	std::cout << std::endl;
+
+	std::cout << "float: ";
+	printFloat(f);
+	std::cout << std::endl;
+
+	std::cout << "double: ";
+	printDouble(static_cast<double>(f));
+	std::cout << std::endl;
+
 }
 void	ScalarConverter::convertFromDouble(double d)
 {
@@ -138,5 +168,5 @@ void	ScalarConverter::printDouble(double d)
 	else if (std::isinf(d))
 		std::cout << (d > 0 ? "+inf" : "-inf");
 	else
-		std::cout << std::fixed << d ;
+		std::cout << std::fixed /* << std::setprecision(2) */ << d  ;
 }
