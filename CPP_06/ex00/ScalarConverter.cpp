@@ -29,8 +29,9 @@ void	ScalarConverter::convert(const std::string &input)
 
 bool	ScalarConverter::isChar(const std::string &input)
 {
-	//length one and printable character, not a digit
-	return (input.length() == 1 && std::isprint(input[0]) && !isdigit(input[0]));
+	return (input.length() == 1
+			&& std::isprint(static_cast<unsigned char>(input[0]))
+			&& !std::isdigit(static_cast<unsigned char>(input[0])));
 }
 bool	ScalarConverter::isInt(const std::string &input)
 {
