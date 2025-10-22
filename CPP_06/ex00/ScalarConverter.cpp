@@ -26,6 +26,8 @@ void	ScalarConverter::convert(const std::string &input)
 	else if (isDouble(input))
 	{
 		std::cout << "isDouble" << std::endl;
+		double d = std::stod(input);
+		convertFromDouble(d);
 	}
 	else
 	{
@@ -146,12 +148,44 @@ void	ScalarConverter::convertFromFloat(float f)
 }
 void	ScalarConverter::convertFromDouble(double d)
 {
-	(void)d;
+	std::cout << "char: ";
+	if (std::isnan(d) || std::isinf(d))
+		std::cout << "impossible";
+	else if (d < 0 || d > 127 || d != static_cast<int>(d))
+		std::cout << "impossible";
+	else if (!std::isprint(static_cast<unsigned char>(static_cast<int>(d))))
+		std::cout << "Non displayable";
+	else
+		std::cout << "'" << static_cast<char>(d) << "'";
+	std::cout << std::endl;
+
+	std::cout << "int: ";
+	if (std::isnan(d) || std::isinf(d))
+		std::cout << "impossible";
+	else if(d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max())
+		std::cout << "impossible";
+	else
+		std::cout << static_cast<int>(d);
+	std::cout << std::endl;
+
+	std::cout << "float: ";
+	if (std::isnan(d))
+		std::cout << "nanf";
+	else if (std::isinf(d))
+		std::cout << (d > 0 ? "+inff" : "-inff");
+	else if (d < std::numeric_limits<float>::lowest() || d > std::numeric_limits<float>::max())
+		std::cout << "impossible";
+	else
+		printFloat(static_cast<float>(d));
+	std::cout << std::endl;
+
+	std::cout << "double: ";
+	printDouble(d);
+	std::cout << std::endl;
 }
 
 void	ScalarConverter::printFloat(float f)
 {
-	//-inff, +inff, and nanf
 	if (std::isnan(f))
 		std::cout << "nanf";
 	else if (std::isinf(f))
@@ -162,11 +196,10 @@ void	ScalarConverter::printFloat(float f)
 
 void	ScalarConverter::printDouble(double d)
 {
-	//-inf, +inf, and nan.
 	if (std::isnan(d))
 		std::cout << "nan";
 	else if (std::isinf(d))
 		std::cout << (d > 0 ? "+inf" : "-inf");
 	else
-		std::cout << std::fixed /* << std::setprecision(2) */ << d  ;
+		std::cout << std::fixed << d ;
 }
