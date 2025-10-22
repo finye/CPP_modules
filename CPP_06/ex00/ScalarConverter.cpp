@@ -8,10 +8,14 @@ void	ScalarConverter::convert(const std::string &input)
 	if (isChar(input))
 	{
 		std::cout << "isChar" << std::endl;
+		char c = input[0];
+		convertFromChar(c);
 	}
 	else if (isInt(input))
 	{
 		std::cout << "isInt" << std::endl;
+		int i = std::stoi(input);
+		convertFromInt(i);
 	}
 	else if (isFloat(input))
 	{
@@ -33,6 +37,7 @@ bool	ScalarConverter::isChar(const std::string &input)
 			&& std::isprint(static_cast<unsigned char>(input[0]))
 			&& !std::isdigit(static_cast<unsigned char>(input[0])));
 }
+
 bool	ScalarConverter::isInt(const std::string &input)
 {
 	static const std::regex intLiterals("^[+-]?\\d+$");
@@ -51,6 +56,7 @@ bool	ScalarConverter::isInt(const std::string &input)
 		return false;
 	}
 }
+
 bool	ScalarConverter::isFloat(const std::string &input)
 {
 	static const std::regex floatPseudoLiterals("^[+-]?(nanf|inff)$");
@@ -59,6 +65,7 @@ bool	ScalarConverter::isFloat(const std::string &input)
 	static const std::regex floatLiterals("^[+-]?\\d+\\.\\d+f$");
 	return std::regex_match(input, floatLiterals);
 }
+
 bool	ScalarConverter::isDouble(const std::string &input)
 {
 	static const std::regex doublePseudoLiterals("^[+-]?(nan|inf)$");
@@ -66,4 +73,70 @@ bool	ScalarConverter::isDouble(const std::string &input)
 		return true;
 	static const std::regex doubleLiterals("^[+-]?\\d+\\.\\d+$");
 	return std::regex_match(input, doubleLiterals);
+}
+
+void	ScalarConverter::convertFromChar(char c)
+{
+	std::cout << "char: '" << c << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(c) << std::endl;
+
+	std::cout << "float: ";
+	printFloat(static_cast<float>(c));
+	std::cout << std::endl;
+
+	std::cout << "double: ";
+	printDouble(static_cast<double>(c));
+	std::cout << std::endl;
+}
+
+void	ScalarConverter::convertFromInt(int i)
+{
+	std::cout << "char: ";
+	if (i < 0 || i > 127)
+		std::cout << "impossible";
+	else if (!std::isprint(static_cast<unsigned char>(i)))
+		std::cout << "Non displayable";
+	else
+		std::cout << "'" << static_cast<char>(i) << "'";
+	std::cout << std::endl;
+
+	std::cout << "int: " << i << std::endl;
+
+	std::cout << "float: ";
+	printFloat(static_cast<float>(i));
+	std::cout << std::endl;
+
+	std::cout << "double: ";
+	printDouble(static_cast<double>(i));
+	std::cout << std::endl;
+}
+void	ScalarConverter::convertFromFloat(float f)
+{
+	(void)f;
+}
+void	ScalarConverter::convertFromDouble(double d)
+{
+	(void)d;
+}
+
+void	ScalarConverter::printFloat(float f)
+{
+	//-inff, +inff, and nanf
+	if (std::isnan(f))
+		std::cout << "nanf";
+	else if (std::isinf(f))
+		std::cout << (f > 0 ? "+inff" : "-inff");
+	else
+		std::cout << std::fixed << f << "f";
+}
+
+void	ScalarConverter::printDouble(double d)
+{
+	//-inf, +inf, and nan.
+	if (std::isnan(d))
+		std::cout << "nan";
+	else if (std::isinf(d))
+		std::cout << (d > 0 ? "+inf" : "-inf");
+	else
+		std::cout << std::fixed << d ;
 }
