@@ -20,14 +20,30 @@ void	ScalarConverter::convert(const std::string &input)
 	else if (isFloat(input))
 	{
 		std::cout << "isFloat" << std::endl;
-		float f = std::stof(input);
-		convertFromFloat(f);
+		try
+		{
+			float f = std::stof(input);
+			convertFromFloat(f);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Error: " << e.what() << std::endl;
+			return ;
+		}
 	}
 	else if (isDouble(input))
 	{
-		std::cout << "isDouble" << std::endl;
-		double d = std::stod(input);
-		convertFromDouble(d);
+		try
+		{
+			std::cout << "isDouble" << std::endl;
+			double d = std::stod(input);
+			convertFromDouble(d);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Error: " << e.what() << std::endl;
+			return ;
+		}
 	}
 	else
 	{
