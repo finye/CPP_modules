@@ -1,7 +1,10 @@
 #pragma once
 #include <iostream>
+#include <limits>
+#include <cmath>
 #include <regex>
-#include <iomanip> // Todo: check later
+#include <iomanip>
+
 class ScalarConverter
 {
 	public:
