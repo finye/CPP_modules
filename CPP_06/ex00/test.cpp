@@ -30,6 +30,10 @@ int main()
 	runTest("32");
 	runTest("127"); // DEL
 	runTest("128");
+	runTest("255");
+	runTest("-1");
+	runTest("-128");
+	runTest("-129");
 
 	std::cout << "\n___________FLOAT____________" << std::endl;
 	runTest("0.0f");
@@ -47,6 +51,7 @@ int main()
 	std::cout << "\n___________DOUBLE____________" << std::endl;
 	runTest("0.0");
 	runTest("42.0");
+	runTest("-42.0");
 	runTest("-42.5");
 	runTest("0.0");
 	runTest("4.2");

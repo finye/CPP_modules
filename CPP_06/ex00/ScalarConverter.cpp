@@ -111,7 +111,7 @@ void	ScalarConverter::convertFromInt(int i)
 {
 	//char
 	std::cout << "char: ";
-	if (i < 0 || i > 127)
+	if (i < std::numeric_limits<char>::min() || i > std::numeric_limits<char>::max())
 		std::cout << "impossible";
 	else if (!std::isprint(static_cast<unsigned char>(i)))
 		std::cout << "Non displayable";
@@ -139,8 +139,13 @@ void	ScalarConverter::convertFromFloat(float f)
 	std::cout << "char: ";
 	if (std::isnan(f) || std::isinf(f))
 		std::cout << "impossible";
-	else if (f < 0 || f > 127 || f != static_cast<int>(f))
-		std::cout << "impossible";
+	else if (f < std::numeric_limits<char>::min()
+			|| f > std::numeric_limits<char>::max()
+			|| f != static_cast<int>(f))
+			{
+
+				std::cout << "impossible";
+			}
 	else if (!std::isprint(static_cast<unsigned char>(static_cast<int>(f))))
 		std::cout << "Non displayable";
 	else
@@ -151,8 +156,8 @@ void	ScalarConverter::convertFromFloat(float f)
 	std::cout << "int: ";
 	if (std::isnan(f) || std::isinf(f))
 		std::cout << "impossible";
-	
-	else if(f < static_cast<float>(std::numeric_limits<int>::min()) || 
+
+	else if(f < static_cast<float>(std::numeric_limits<int>::min()) ||
 			f > static_cast<float>(std::numeric_limits<int>::max()))
 		std::cout << "impossible";
 	else
@@ -176,8 +181,12 @@ void	ScalarConverter::convertFromDouble(double d)
 	std::cout << "char: ";
 	if (std::isnan(d) || std::isinf(d))
 		std::cout << "impossible";
-	else if (d < 0 || d > 127 || d != static_cast<int>(d))
-		std::cout << "impossible";
+	else if (d < std::numeric_limits<char>::min()
+			|| d > std::numeric_limits<char>::max()
+			|| d != static_cast<int>(d))
+		{
+			std::cout << "impossible";
+		}
 	else if (!std::isprint(static_cast<unsigned char>(static_cast<int>(d))))
 		std::cout << "Non displayable";
 	else
@@ -201,7 +210,7 @@ void	ScalarConverter::convertFromDouble(double d)
 		std::cout << "nanf";
 	else if (std::isinf(d))
 		std::cout << (d > 0 ? "+inff" : "-inff");
-	else if (d < std::numeric_limits<float>::lowest() || 
+	else if (d < std::numeric_limits<float>::lowest() ||
 			d > std::numeric_limits<float>::max())
 		std::cout << "impossible";
 	else
