@@ -25,6 +25,8 @@ class ScalarConverter
 		static void convertFromFloat(float f);
 		static void convertFromDouble(double d);
 
-		static void printFloat(float f);
-		static void printDouble(double d);
+		static void printChar(double val);
+		static void	printInt(double val);
+		static void printFloat(float val);
+		static void printDouble(double val);
 };
