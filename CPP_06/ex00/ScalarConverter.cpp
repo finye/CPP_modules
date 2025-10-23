@@ -75,7 +75,7 @@ bool	ScalarConverter::isFloat(const std::string &input)
 	static const std::regex floatPseudoLiterals("^[+-]?(nanf|inff)$");
 	if (std::regex_match(input,floatPseudoLiterals))
 		return true;
-	static const std::regex floatLiterals("^[+-]?\\d+\\.\\d+f$");
+	static const std::regex floatLiterals("^[+-]?\\d+\\.\\d+([eE][+-]?\\d+)?f$");
 	return std::regex_match(input, floatLiterals);
 }
 
@@ -84,7 +84,7 @@ bool	ScalarConverter::isDouble(const std::string &input)
 	static const std::regex doublePseudoLiterals("^[+-]?(nan|inf)$");
 	if (std::regex_match(input, doublePseudoLiterals))
 		return true;
-	static const std::regex doubleLiterals("^[+-]?\\d+\\.\\d+$");
+	static const std::regex doubleLiterals("^[+-]?\\d+\\.\\d+([eE][+-]?\\d+)?$");
 	return std::regex_match(input, doubleLiterals);
 }
 
