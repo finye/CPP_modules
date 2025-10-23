@@ -3,17 +3,22 @@
 
 int main()
 {
-	Data A = {"A", 55};
+	Data data = {1, "Dan", 55};
 
-	std::cout << "Struct data"<< std::endl;
-	std::cout << A.name << std::endl;
-	std::cout << A.age << std::endl;
+	std::cout << "struct data Address: " << &data << std::endl;
+	std::cout << "data: "
+			<< data.id  << ", "
+			<< data.name << ", "
+			<< data.age <<  std::endl;
 
+	uintptr_t uintPtrA = Serializer::serialize(&data);
+	Data *deserialized = Serializer::deserialize(uintPtrA);
 
-	uintptr_t uintPtrA = Serializer::serialize(&A);
-	Data *ptrA = Serializer::deserialize(uintPtrA);
+	std::cout << "\ndeserialized data Address: " << deserialized << std::endl;
+	std::cout << "deserialized data: "
+			<< deserialized->id  << ", "
+			<< deserialized->name << ", "
+			<< deserialized->age <<  std::endl;
 
-	std::cout << "Deseriealized data"<< std::endl;
-	std::cout << ptrA->name << std::endl;
-	std::cout << ptrA->age << std::endl;
+	return 0;
 }
