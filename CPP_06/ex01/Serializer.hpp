@@ -17,4 +17,5 @@ class Serializer
 		Serializer& operator=(const Serializer &rhs) = delete;
 
 		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
 };

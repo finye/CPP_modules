@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror
 OBJDIR = obj
 
 HEADERS = Serializer.hpp
-SOURCES = Serializer.cpp
+SOURCES = Serializer.cpp main.cpp
 OBJECTS = $(addprefix $(OBJDIR)/, $(SOURCES:.cpp=.o))
 
 all: $(NAME)
