@@ -1,7 +1,7 @@
 NAME = convert
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror 
+FLAGS = -Wall -Wextra -Werror
 
 OBJDIR = obj
 
