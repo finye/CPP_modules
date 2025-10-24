@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror
 OBJDIR = obj
 
 HEADERS = Base.hpp A.hpp B.hpp C.hpp
-SOURCES = Base.cpp
+SOURCES = Base.cpp main.cpp
 OBJECTS = $(addprefix $(OBJDIR)/, $(SOURCES:.cpp=.o))
 
 all: $(NAME)
