@@ -30,7 +30,7 @@ class Array
 			_n = rhs._n;
 
 			_arr = new T[rhs._n];
-			for (unsigned int i = 0; i < src._n; i++)
+			for (unsigned int i = 0; i < rhs._n; i++)
 				_arr[i] = rhs._arr[i];
 
 			return *this;
