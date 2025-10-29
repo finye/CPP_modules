@@ -2,6 +2,8 @@
 #include "Array.hpp"
 #define MAX_VAL 750
 
+void printNames(const Array<std::string>& names);
+
 int main(int, char**)
 {
 	Array<int> numbers(MAX_VAL);
@@ -73,5 +75,24 @@ int main(int, char**)
 		}
 	}
 	delete [] mirror;//
+
+	std::cout << "\n---array of strings---\n"<<  std::endl;
+
+	Array<std::string> names(5);
+	names[0] = "Anychka";
+	names[1] = "Bebe";
+	names[2] = "Colin";
+	names[3] = "Dimi";
+	names[4] = "Ethan";
+
+	printNames(names);
 	return 0;
+}
+
+void printNames(const Array<std::string>& names)
+{
+	for (unsigned int i = 0; i < names.size(); i++)
+	{
+		std::cout << "names[" << i << "] = "<< names[i] << std::endl;
+	}
 }
