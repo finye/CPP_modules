@@ -1,7 +1,7 @@
-NAME = templates
+NAME = whatever
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++20
 
 OBJDIR = obj
 

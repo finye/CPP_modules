@@ -1,6 +1,4 @@
 #include "iter.hpp"
-#include <iostream>
-
 
 int main()
 {
@@ -14,29 +12,27 @@ int main()
 	const char charArrConst[] = { 'a', 'b', 'c'};
 	const std::string strArrConst[] = {"yolo", "smile", "autumn", "cpp", "yay"};
 
-	size_t len = sizeof(intArr) / sizeof(int);
-	iter(intArr, len, print<int>);
+	iter(intArr, std::size(intArr), print<int>);
 	std::cout << std::endl;
 
-	len = sizeof(floatArr) / sizeof(float);
-	iter(floatArr, len, print<float>);
+	iter(floatArr, std::size(floatArr), print<float>);
 	std::cout << std::endl;
 
-	iter(doubleArr, std::size(doubleArr), print<double>); // does size work?
+	iter(doubleArr, std::size(doubleArr), print<double>);
 	std::cout << std::endl;
 
-	iter(charArr, 3, print<char>);
+	iter(charArr, std::size(charArr), print<char>);
 	std::cout << std::endl;
 
-	iter(strArr, 5, print<std::string>);
+	iter(strArr, std::size(strArr), print<std::string>);
 	std::cout << std::endl;
 
-	iter(intArrConst, 3, print<int>);
+	iter(intArrConst, std::size(intArrConst), print<int>);
 	std::cout << std::endl;
 
-	iter(charArrConst, 3, print<char>);
+	iter(charArrConst, std::size(charArrConst), print<char>);
 	std::cout << std::endl;
 
-	iter(strArrConst, 5, print<std::string>);
+	iter(strArrConst, std::size(strArrConst), print<std::string>);
 	std::cout << std::endl;
 }

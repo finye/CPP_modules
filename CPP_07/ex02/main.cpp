@@ -74,7 +74,7 @@ int main(int, char**)
 			//std::cout << "\ntest[" << i << "] = " << test[i] << std::endl;
 		}
 	}
-	delete [] mirror;//
+	delete [] mirror;
 
 	std::cout << "\n---array of strings---\n"<<  std::endl;
 
