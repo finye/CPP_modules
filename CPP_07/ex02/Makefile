@@ -5,7 +5,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++20
 
 OBJDIR = obj
 
-HEADERS = Array.hpp
+HEADERS = Array.hpp Array.tpp
 SOURCES = main.cpp
 OBJECTS = $(addprefix $(OBJDIR)/, $(SOURCES:.cpp=.o))
 
