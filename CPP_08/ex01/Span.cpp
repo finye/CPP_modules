@@ -1,22 +1,12 @@
 #include "Span.hpp"
 
-Span::Span()
+Span::Span(unsigned int n): _size(n)
 {
-
 }
-Span::~Span()
-{
 
-}
-Span::Span(unsigned int n)
+void Span::addNumber(int num)
 {
-
-}
-Span::Span(const Span &src)
-{
-
-}
-Span& Span::operator=(const Span &rhs)
-{
-
+	if (_span.size() >= _size)
+		throw std::overflow_error(" Exception: Span overflow!");
+	_span.insert(num);
 }

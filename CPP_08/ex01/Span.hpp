@@ -1,14 +1,17 @@
 #pragma once
 #include <iostream>
+#include <set>
 
 class Span
 {
 	public:
-		Span();
-		~Span();
+		Span() = delete;
 		Span(unsigned int n);
-		Span(const Span &src);
-		Span& operator=(const Span &rhs);
+		~Span() = default;
+		Span(const Span &src) = default;
+		Span& operator=(const Span &rhs) = default;
+		void addNumber(int num);
 	private:
-		unsigned int _maxN;
+		unsigned int _size;
+		std::multiset<int> _span;
 };
