@@ -8,7 +8,7 @@ int main()
 {
 	std::cout << "\n ___Testing std::vector___" << std::endl;
 	std::vector<int> vec = {1, 2, 3, 4, 5, 3, 7};
-	std::vector<int> empty;
+
 	try
 	{
 		std::vector<int>::iterator it = easyfind(vec, 3);
@@ -19,9 +19,6 @@ int main()
 		std::cout << "Found value \"" << *it << "\"" << " at position ["
 		<< std::distance(vec.begin(), it) << "]" << std::endl;
 
-		it = easyfind(empty, 1);
-		std::cout << "Found value \"" << *it << "\"" << " at position ["
-		<< std::distance(vec.begin(), it) << "]" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -39,6 +36,36 @@ int main()
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
+	std::cout << "\n ___empty std::vector___" << std::endl;
+	std::vector<int> empty;
+
+	try
+	{
+		std::vector<int>:: iterator it = easyfind(empty, 1);
+		std::cout << "Found value \"" << *it << "\"" << " at position ["
+		<< std::distance(vec.begin(), it) << "]" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
+
+	std::cout << "\n ___const std::vector___" << std::endl;
+	const std::vector<int> constVec = {1, 2, 3, 4, 5, 3, 7};
+	try
+	{
+		std::vector<int>::const_iterator it = easyfind(constVec, 3);
+		std::cout << "Found value \"" << *it << "\"" << " at position ["
+		<< std::distance(constVec.begin(), it) << "]" << std::endl;
+
+		it = easyfind(constVec, -1);
+		std::cout << "Found value \"" << *it << "\"" << " at position ["
+		<< std::distance(constVec.begin(), it) << "]" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
 
 	std::cout << "\n ___Testing std::list___" << std::endl;
 	std::list<int> list = {10, 20, 30, 40, 50, 30, -10};
