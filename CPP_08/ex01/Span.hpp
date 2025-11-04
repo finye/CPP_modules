@@ -2,6 +2,7 @@
 #include <iostream>
 #include <set>
 #include <limits>
+#include <algorithm>
 
 class Span
 {
@@ -25,6 +26,6 @@ class Span
 		}
 
 	private:
-		unsigned int _size;
-		std::multiset<int> _span;
+		unsigned int		_size;
+		std::multiset<int>	_span;
 };

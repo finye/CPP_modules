@@ -13,19 +13,16 @@ void Span::addNumber(int num)
 
 unsigned int	Span::shortestSpan()
 {
-	if (_span.empty())
-		throw std::length_error("shortestSpan: Span is empty");
-	if (_size == 1)
-		throw std::length_error("shortestSpan: Span has only 1 element");
+	if (_span.size() < 2)
+		throw std::length_error("shortestSpan: needs atleast 2 elements in span");
 
 	unsigned int shortest = std::numeric_limits<unsigned int>::max();
 	auto it = _span.begin();
-    auto nx = std::next(it);
+	auto nx = std::next(it);
 	while( nx != _span.end())
 	{
-		unsigned int curr = static_cast<unsigned int>(*nx) - static_cast<unsigned int>(*it);
-		if (curr < shortest)
-			shortest = curr;
+		long long diff = static_cast<long long>(*nx) - static_cast<long long>(*it);
+		shortest = std::min(shortest, static_cast<unsigned int>(diff));
 		it++;
 		nx++;
 	}
@@ -34,13 +31,11 @@ unsigned int	Span::shortestSpan()
 
 unsigned int	Span::longestSpan()
 {
-	if (_span.empty())
-		throw std::length_error("longestSpan: Span is empty");
-	if (_size == 1)
-		throw std::length_error("longestSpan: Span has only 1 element");
+	if (_span.size() < 2)
+		throw std::length_error("longestSpan: needs atleast 2 elements in span");
 
-	unsigned int begin =  static_cast<unsigned int>(*_span.begin());
-	unsigned int rbegin =  static_cast<unsigned int>(*_span.rbegin());
+	long long minVal =  static_cast<long long>(*_span.begin());
+	long long maxVal =  static_cast<long long>(*_span.rbegin());
 
-	return rbegin - begin;
+	return static_cast<unsigned int>(maxVal - minVal);
 }
